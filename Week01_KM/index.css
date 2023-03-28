@@ -1,0 +1,605 @@
+/* CSS 초기화 코드 적용하는 것을 추천한다. => 원하지 않는 CSS 코드들을 사전에 방지 */
+
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section {
+	display: block;
+}
+body {
+	line-height: 1;
+}
+ol, ul {
+	list-style: none;
+}
+blockquote, q {
+	quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+	content: '';
+	content: none;
+}
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+
+/* 여기서부터 시작 */
+
+#top_board_container {
+    height: 40px;
+	border-bottom: 0.5px solid gray;
+	/* 아래 모든 속성들은 display가 flex 혹은 flex-inline임이 전제되어야 적용됨. */
+	display: flex;
+	/* justify-content : 플렉스 요소의 가로 방향 정렬 방식을 설정함. 자식요소들의 너비 합이 부모요소의 너비보다 작을 때 유효할 것이다. 여기서는 자식 요소 너비가 부모 너비의 95%이므로 적용될 것. 여기서는 center로 설정되었으므로, 자식요소(들)는 가운데에서부터 양쪽으로 채워가는 형식이 될 것이다. 참고로 start라면, 자식 요소가 부모 요소보다 너비가 작은 경우 왼쪽에 딱 붙어서 시작하게 될 것이다. */
+	justify-content: center;
+	/* align-items : 플렉스 요소의 세로 방향 정렬 방식을 설정함. 부모요소보다 자식 요소의 높이가 작을 때, 수직으로 어떻게 정렬할지를 결정한다. center 값이 주어지면, 자식 요소는 부모 요소의 정중앙 높이에 위치하게 될 것이다. */
+	align-items: center;
+}
+
+#top_board_contents {
+	/* 부모 요소 너비의 95%만큼만 가져간다. */
+	width: 95%;
+	display: flex;
+	flex-direction: row;
+	align-items: center;
+	justify-content: center;
+	/* 부모 요소 높이의 80%만큼만 가져간다. */
+	height: 80%;
+}
+
+.top_board_select {
+	overflow: hidden;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	height: 100%;
+	width: 85px;
+}
+
+/* 이미지를 그대로 넣으면 잘려버리는 현상이 일어나기 때문에, container를 두고 그 안에 이미지를 넣는다. */
+.top_banner_image_container {
+	width: 30px;
+	height: 100%;
+	/* 이미지가 영역을 벗어나는 경우, 어떻게 보여줄지에 대해 결정하는 속성이다. 벗어나는 영역은 보여주고 싶지 않으면 hidden으로 설정한다. */
+	overflow: hidden;
+	overflow-y: hidden;
+}
+
+
+.top_banner_image_container > img {
+
+	display: block;
+	/* 이미지의 높이와 너비는 부모와 똑같이. */
+	width: 100%;
+	height: 100%;
+	/* margin을 0 auto로 설정하면, 부모 내부에서 정 가운데로 정렬된다. 여기서 0값은, 상하좌우에 대하여 여백을 주지 않겠다는 의미이고, auto는 부모 내부에서 좌우 중앙으로 정렬하겠다는 의미 */
+	margin: 0 auto;
+	
+}
+
+#top_board_space {
+	width: 1200px;
+}
+
+#top_board_participate {
+	width: 200px;
+	height: 100%;
+	margin: 0 auto;
+	text-align: center;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+header {
+	/* position 속성을 sticky로 지정하면, 스크롤을 해도 화면 상에서 절대적인 위치에서 벗어나지 않게 된다. 안드로이드로 치면 app bar를 만드는 방법이라고 보면 될듯 */
+    position: sticky;
+    height: 64px;
+	/* 스크롤 한 경우, 최상단에서 몇 픽셀 떨어뜨릴 것인지 */
+    top: 0;
+	display: flex;
+	flex-direction: row;
+	/* 배경 설정을 하지 않으면, 투명한 배경이므로 스크롤 시 글자가 겹쳐보이게 된다. 따라서 배경설정을 어떤 색이든 해줘야 한다는 것이 포인트 */
+	background-color: white;
+	align-items: center;
+	justify-content: center;
+}
+
+/* 주의!!! flex 블록의 경우, 자식 요소들의 태그가 div인 것들에 대해서만 적용된다. 즉 자식 태그가 div가 아닌 form, nav 등 다른 태그가 온다면, 부모 요소에서 display를 flex로 정의하고 그에 따라 align-items 그리고 justify-content 속성을 정의한다고 하더라도 div가 아닌 태그들에 대해서는 적용이 되지 않는다..... */
+#header_contents {
+	width: 95%;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	height: 80%;
+	background-color: white;
+}
+
+#inflearn_logo_container {
+	width: 100px;
+	height: 40%;
+	align-items: center;
+	justify-content: center;
+	overflow: hidden;
+}
+
+#inflearn_logo_container > img {
+	width: 100%;
+	height: 100%;
+	align-items: center;
+	justify-content: center;
+	margin: 0 auto;
+}
+
+#nav_bar_left {
+	/* 바로 인접해있는 형제 요소와의 외부 공간을 설정. margin-left 혹은 margin-right로 */
+	margin-left: 30px;
+	width: 400px;
+	height: 50%;
+	align-items: center;
+	justify-content: center;
+	display: flex;
+	flex-direction: row;
+}
+
+.nav_bar_left_item {
+	/* 아이템이 기본값을 넘어 넓어질 수 있는 지를 설정함. 1만 줘도 화면 끝까지 꽉 채운다. 아이템을 화면에 꽉 채우는 데 유용하다.  1이면 늘어나고 0이면 안 늘어난다. */
+	flex-grow: 1;
+	align-items: center;
+	justify-content: center;
+	font-size: 15px;
+	font-weight: bold;
+}
+
+#nav_bar_space {
+	width: 520px;
+	height: 100%;
+}
+
+#search {
+	background-color: rgb(235, 235, 235);
+	border-radius: 10px;
+	width: 200px;
+	height: 40px;
+	display: flex;
+	flex-direction: row;
+	align-items: center;
+	justify-content: center;
+}
+
+#search > input {
+	background-color: transparent;
+	width: 70%;
+	height: 80%;
+	/* input의 경계선과 배경을 투명하게 하기 위하여, border 속성과 background 속성을 다음과 같이 설정한다. */
+	background: transparent;
+	border: none;
+	align-items: center;
+	justify-content: center;
+}
+
+#search > img {
+	margin-left: 10px;
+}
+
+.login_sign_up {
+	width: 60px;
+	height: 40%;
+	border: 0.5px solid gray;
+	border-radius: 5px;
+	padding: 10px;
+	text-align: center;
+	font-size: 10px;
+}
+
+#banner {
+    height: 320px;
+	display: block;
+}
+
+
+
+.outer {
+	width: 100%;
+	height: 100%;
+	margin: 0 auto;
+	overflow-x: hidden;
+  }
+
+/* 스크롤바를 제거 */
+.outer::-webkit-scrollbar {
+	display: none;
+}
+
+.inner-list {
+	display: flex;
+	transition: .3s ease-out;
+	height: 100%;
+}
+
+.inner {
+	padding: 0;
+}
+
+.inner > img {
+	width: 100%;
+	height: 100%;
+}
+
+#search_lectures {
+	height: 172px;
+}
+
+#search_lectures_description {
+	font-size: 24px;
+	font-family: "나눔고딕";
+	text-align: center;
+	margin-bottom: 20px;
+	margin-top: 50px;
+}
+
+#search_lectures_form {
+	width: 600px;
+	height: 54px;
+	background-color: rgba(29,192,120,.12);
+	border: 1px solid rgba(66, 114, 93, 0.24);
+	border-radius: 30px;
+	margin: 0 auto;
+	display: flex;
+	flex-direction: row;
+	align-items: center;
+	justify-content: center;
+}
+
+#search_lectures_form > input {
+	background: transparent;
+	border: none;
+	height: 80%;
+	width: 80%;
+}
+
+#search_lectures_form > img {
+	margin-left: 10px;
+	height: 50%;
+}
+
+#lecture_categories {
+	display: flex;
+	align-items: start;
+	height: 140px;
+}
+
+#lecture_categories_list {
+	margin-left: 20px;
+	margin-right: 20px;
+	display: flex;
+	flex-direction: row;
+	height: 80%;
+	width: 100%;
+	align-items: center;
+	justify-content: center;
+	/* 스크롤을 만들기 위한 작업 */
+	/* 가로로 스크롤 하도록 하기 위한 작업 */
+	/* white-space 속성을 nowrap로 설정. 자동 줄바꿈이 되지 않도록 한다. */
+	overflow-x: scroll;
+	white-space: nowrap;	
+	flex-grow: 1;
+}
+
+/* 스크롤 바를 없애기 위한 작업 */
+#lecture_categories_list::-webkit-scrollbar {
+	display: none;
+}
+
+.category_item {
+	width: 150px;
+	height: 94px;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+}
+
+.category_img_container {
+	height: 54px;
+	width: 100%;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	overflow: hidden;
+}
+
+.category_img_container > img {
+	height: 100%;
+	width: 54px;
+	align-items: center;
+}
+
+.category_text {
+	margin-top: 20px;
+	font-weight: bold;
+	font-size: 15px;
+	align-items: center;
+}
+
+.courses {
+	display: block;
+	margin-left: 32px;
+	margin-right: 32px;
+}
+
+.courses_title {
+	display: flex;
+	flex-direction: row;
+	margin-top: 10px;
+}
+
+.courses_title > h1 {
+	font-size: 24px;
+	font-weight: bold;
+}
+
+.fa-sharp fa-solid fa-chevron-right {
+	height: 100%;
+	width: 20px;
+}
+
+.courses_desc {
+	margin-top: 10px;
+	color: gray;
+}
+
+.courses_container {
+	display: flex;
+	flex-direction: row;
+	justify-content: center;
+	align-items: center;
+	overflow: hidden;
+	height: 300px;
+	margin-top: 20px;
+}
+
+.course_item {
+	display: block;
+	width: 222px;
+	height: 95%;
+	margin-right: 20px;
+}
+
+.course_img_container {
+	width: 222px;
+	height: 145px;
+	align-items: center;
+	justify-content: center;
+	overflow: hidden;
+}
+
+.course_img_container > img {
+	width: 100%;
+	height: 100%;
+}
+
+.course_title {
+	width: 100%;
+	height: 48px;
+	font-size: 16px;
+	font-weight: bold;
+	margin-top: 10px;
+}
+
+.course_owner {
+	width: 100%;
+	height: 21px;
+	color: gray;
+}
+
+.fa-sharp fa-solid fa-star {
+	color: yellow;
+}
+
+.course_price {
+	font-size: 16px;
+	color: blue;
+	font-weight: bold;
+}
+
+#inflearn_participants {
+	display: flex;
+	flex-direction: row;
+	height: 400px;
+	align-items: center;
+	justify-content: center;
+	margin: 30px;
+}
+
+#inflearn_participants_container {
+	display: block;
+	justify-content: center;
+	align-items: center;
+	height: 300px;
+	/* line-height 속성의 경우, 세로 중앙 정렬의 용도로 사용하고자 할 때는 안에 텍스트 하나만 들어간 경우에 대해서만 유효하다... 말 그대로 line-height는 한 줄 당 길이를 의미하기 때문에, 한 줄당 길이를 요소의 높이와 같게 설정하면, 한 줄만 나오게 되기 때문 */
+}
+
+.inflearn_participants_content {
+	margin: 0 auto;
+	/* 수동으로 수직 위치를 설정하는 방법 : postiion을 relative로 설정하고, top값을 원하는 만큼 준다. */
+	position: relative;
+	top: 20px;
+}
+
+#num_of_participants {
+	font-size: 30px;
+	font-weight: bold;
+	color: rgb(54, 144, 54);
+}
+
+.num_of_participants_etc {
+	font-size: 30px;
+	font-weight: bold;
+	color: black
+}
+
+#num_of_participants_desc {
+	margin-top: 30px;
+}
+
+#num_of_participants_desc > div {
+	font-size: 15px;
+	color: gray;
+	height: 20px;
+}
+
+#inflearn_participants_buttons {
+	height: 45px;
+	display: flex;
+	flex-direction: row;
+	margin-top: 50px;
+}
+
+#participants_button1 {
+	height: 38px;
+	width: 140px;
+	border: 1px solid #1dc078;
+	border-radius: 3px;
+	font-size: 16px;
+	/* text-align : 텍스트 수평 가운데 정렬 */
+	text-align: center;
+	/* 현재 태그의 display가 만약 flex 속성으로 되어있다면, 아래와 같이 justify-content도 설정을 해주어야 가운데 정렬이 된다. 안하면 안됨.  */
+	/* justify-content: center; */
+	/* 세로도 가운데 정렬을 하고 싶다면, height와 같은 값으로 line-height를 설정한다. */
+	line-height: 38px;
+}
+
+#participants_button2 {
+	height: 38px;
+	width: 172px;
+	border: 1px solid #1dc078;
+	border-radius: 3px;
+	font-size: 16px;
+	/* text-align : 텍스트 수평 가운데 정렬 */
+	text-align: center;
+	/* 현재 태그의 display가 만약 flex 속성으로 되어있다면, 아래와 같이 justify-content도 설정을 해주어야 가운데 정렬이 된다. 안하면 안됨.  */
+	/* justify-content: center; */
+	line-height: 38px;
+	margin-left: 10px;
+}
+
+#inflearn_participants_container_right {
+	display: block;
+	width: 600px;
+	height: 100%;
+	overflow-y: scroll;
+}
+
+.review_item {
+	width: 80%;
+	/* height는 auto가 기본값. 이는 콘텐츠가 들어간 만큼으로 높이를 조절한다는 의미 */
+	height: auto;
+	/* '내부' 요소에 대해 margin을 auto로 지정하면 가운데 정렬이 된다. */
+	margin: 0 auto;
+	margin-bottom: 50px;
+}
+
+#banner_bottom {
+	height: auto;
+	border: 0.5px solid black;
+	overflow-x: hidden;
+}
+
+#group-section {
+	height: 204px;
+	padding: 64px 32px 44px;
+	border: 0.5px solid black;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	flex-direction: column;
+}
+
+#group-section-desc {
+	line-height: 1.4;
+    letter-spacing: -.3px;
+    font-size: 20px;
+    margin-bottom: 20px;
+    font-weight: 700;
+    text-align: center;
+}
+
+#group-list {
+	display: flex;
+	flex-direction: row;
+	width: 80%;
+	height: auto;
+	overflow-x: hidden;
+	white-space: pre-wrap;
+}
+
+#group-list img {
+	padding: 30px;
+	width: 100px;
+	height: 50px;
+}
+
+#apply-services {
+	height: 400px;
+	display: flex;
+	flex-direction: row;
+	border: 0.5px solid black;
+	align-items: center;
+	justify-content: center;
+}
+
+#apply-services-container {
+	height: 100%;
+	width: 95%;
+
+}
+
+#apply-services-title {
+	font-size: 24px;
+	font-weight: bold;
+	color: black;
+}
+
+#apply-services-desc {
+	margin-top: 10px;
+	font-size: 15px;
+	color: gray;
+}
+
+#service-item-container {
+	width: 100%;
+	height: 150px;
+	display: flex;
+	flex-direction: row;
+}
+
+.service-item {
+	display: block;
+	width: 370px;
+	height: 100%;
+	border: 0.3px solid gray;
+	border-radius: 3px;
+	padding: 32px 42px;
+}

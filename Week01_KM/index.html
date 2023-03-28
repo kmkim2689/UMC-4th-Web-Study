@@ -1,0 +1,666 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>인프런 클론코딩</title>
+    <link rel="stylesheet" href="./index.css">
+    <!-- 아이콘을 사용하기 위한 코드 -->
+    <script src="https://kit.fontawesome.com/f1a922a36b.js" crossorigin="anonymous"></script>
+</head>
+<body>
+    <!-- 상단 카테고리 선택 부분 -->
+    <section id="top_board_container">
+        <div id="top_board_contents">
+            <div class="top_board_select">
+                <div class="top_banner_image_container">
+                    <img class="top_banner_image" src="./media/inflearn_logo.jpg"/>
+                </div>
+                <div>
+                    교육
+                </div>
+            </div>
+            <div class="top_board_select">
+                <div class="top_banner_image_container">
+                    <img class="top_banner_image" src="./media/inflearn_logo.jpg"/>
+                </div>
+                <div>
+                    채용
+                </div>
+            </div>
+            <div id="top_board_space">
+            </div>
+            <div id="top_board_participate">
+                지식공유 참여
+            </div>
+        </div>
+    </section>
+
+    <!-- 상단 메뉴바 부분 -->
+    <header id="header">
+        <div id="header_contents">
+            <div id="inflearn_logo_container">
+                <img src="./media/inflearn.png" alt="인프런 로고"/>
+            </div>
+            <div id="nav_bar_left">
+                <div class="nav_bar_left_item">
+                    강의
+                </div>
+                <div class="nav_bar_left_item">
+                    로드맵
+                </div>
+                <div class="nav_bar_left_item">
+                    멘토링
+                </div>
+                <div class="nav_bar_left_item">
+                    커뮤니티
+                </div>
+                <div class="nav_bar_left_item">
+                    인프런
+                </div>
+            </div>
+            <div id="nav_bar_space">
+            </div>
+            <div>
+                <form id="search">
+                    <input id="search_content" type="search" />
+                    <img class="search_icon" src="media/search.png" alt="검색"/>
+                </form>
+            </div>
+            <div class="login_sign_up">
+                로그인
+            </div>
+            <div class="login_sign_up">
+                회원가입
+            </div>
+        </div>
+    </header>
+
+    <section id="banner">
+        <div class="outer">
+            <div class="inner-list">
+                <div class="inner">
+                    <img src="media/banner1.jpg"/>
+                </div>
+                <div class="inner">
+                    <h2>second...</h2>
+                </div>
+                <div class="inner">
+                    <h2>third...</h2>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <div class="button-list">
+        <button class="button-left">← Left</button>
+        <button class="button-right">Right →</button>
+    </div>
+
+    <section id="search_lectures">
+        <div id="search_lectures_description">
+            배우고, 나누고, 성장하세요
+        </div>
+        <div id="search_lectures_form">
+            <input type="text"/>
+            <img class="search_icon" src="media/search.png" alt="검색"/>
+        </div>
+    </section>
+
+    <section id="lecture_categories">
+        <div id="lecture_categories_list">
+            <div class="category_item">
+                <div class="category_img_container">
+                    <img src="https://cdn.inflearn.com/public/curation/byManage.png" alt="관리형 부트캠프"/>
+                </div>
+                <div class="category_text">
+                    # 관리형 부트캠프
+                </div>
+            </div>
+            <div class="category_item">
+                <div class="category_img_container">
+                    <img src="https://cdn.inflearn.com/public/curation/_byMyself.png" alt="독학형 부트캠프"/>
+                </div>
+                <div class="category_text">
+                    # 독학형 부트캠프
+                </div>
+            </div>
+            <div class="category_item">
+                <div class="category_img_container">
+                    <img src="https://cdn.inflearn.com/public/curation/spring.png" alt="스프링"/>
+                </div>
+                <div class="category_text">
+                    # 스프링
+                </div>
+            </div>
+            <div class="category_item">
+                <div class="category_img_container">
+                    <img src="https://cdn.inflearn.com/public/curation/game.png" alt="게임개발"/>
+                </div>
+                <div class="category_text">
+                    # 게임개발
+                </div>
+            </div>
+
+            <div class="category_item">
+                <div class="category_img_container">
+                    <img src="https://cdn.inflearn.com/public/curation/ux-ui.png" alt="UX UI"/>
+                </div>
+                <div class="category_text">
+                    # UX UI
+                </div>
+            </div>
+
+
+            <div class="category_item">
+                <div class="category_img_container">
+                    <img src="https://cdn.inflearn.com/public/curation/work-skills.png" alt="코딩테스트"/>
+                </div>
+                <div class="category_text">
+                    # 코딩테스트
+                </div>
+            </div>
+
+            <div class="category_item">
+                <div class="category_img_container">
+                    <img src="https://cdn.inflearn.com/public/curation/marketing.png" alt="마케팅"/>
+                </div>
+                <div class="category_text">
+                    # 마케팅
+                </div>
+            </div>
+
+            <div class="category_item">
+                <div class="category_img_container">
+                    <img src="https://cdn.inflearn.com/public/curation/datascience.png" alt="데이터"/>
+                </div>
+                <div class="category_text">
+                    # 데이터
+                </div>
+            </div>
+
+            <div class="category_item">
+                <div class="category_img_container">
+                    <img src="https://cdn.inflearn.com/public/curation/security.png" alt="보안"/>
+                </div>
+                <div class="category_text">
+                    # 보안
+                </div>
+            </div>
+            
+            <div class="category_item">
+                <div class="category_img_container">
+                    <img src="https://cdn.inflearn.com/public/curation/excel.png" alt="엑셀"/>
+                </div>
+                <div class="category_text">
+                    # 엑셀
+                </div>
+            </div>
+
+            <div class="category_item">
+                <div class="category_img_container">
+                    <img src="https://cdn.inflearn.com/public/curation/ux-ui.png" alt="UX UI"/>
+                </div>
+                <div class="category_text">
+                    # UX UI
+                </div>
+            </div>
+
+            <div class="category_item">
+                <div class="category_img_container">
+                    <img src="https://cdn.inflearn.com/public/curation/ux-ui.png" alt="UX UI"/>
+                </div>
+                <div class="category_text">
+                    # UX UI
+                </div>
+            </div>
+        </div>
+
+    </section>
+
+    <section class="courses">
+        <div class="courses_title">
+            <h1>무료강의? 오히려 좋아 ✨</h1>
+            <i class="fa-sharp fa-solid fa-chevron-right"></i>
+        </div>
+        <div class="courses_desc">무료 강의부터 가볍게 시작해 보세요.</div>
+        <div class="courses_container">
+            <div class="course_item">
+                <div class="course_img_container">
+                    <img src="https://cdn.inflearn.com/public/courses/324059/cover/7ac25dbb-9193-4c7d-98fb-22b8bb4eba54" alt="웹 게임을 만들며 배우는 React">
+                </div>
+                <div class="course_title">
+                    웹 게임을 만들며 배우는 React
+                </div>
+                <div class="course_owner">
+                    조현영
+                </div>
+                <div class="ratings">
+                    <i class="fa-sharp fa-solid fa-star"></i>
+                    <i class="fa-sharp fa-solid fa-star"></i>
+                    <i class="fa-sharp fa-solid fa-star"></i>
+                    <i class="fa-sharp fa-solid fa-star"></i>
+                    <i class="fa-sharp fa-solid fa-star"></i>
+                </div>
+                <div class="course_price">무료</div>
+            </div>
+
+            <div class="course_item">
+                <div class="course_img_container">
+                    <img src="https://cdn.inflearn.com/public/courses/324059/cover/7ac25dbb-9193-4c7d-98fb-22b8bb4eba54" alt="웹 게임을 만들며 배우는 React">
+                </div>
+                <div class="course_title">
+                    웹 게임을 만들며 배우는 React
+                </div>
+                <div class="course_owner">
+                    조현영
+                </div>
+                <div class="ratings">
+                    <i class="fa-sharp fa-solid fa-star"></i>
+                    <i class="fa-sharp fa-solid fa-star"></i>
+                    <i class="fa-sharp fa-solid fa-star"></i>
+                    <i class="fa-sharp fa-solid fa-star"></i>
+                    <i class="fa-sharp fa-solid fa-star"></i>
+                </div>
+                <div class="course_price">무료</div>
+            </div>
+
+            <div class="course_item">
+                <div class="course_img_container">
+                    <img src="https://cdn.inflearn.com/public/courses/324059/cover/7ac25dbb-9193-4c7d-98fb-22b8bb4eba54" alt="웹 게임을 만들며 배우는 React">
+                </div>
+                <div class="course_title">
+                    웹 게임을 만들며 배우는 React
+                </div>
+                <div class="course_owner">
+                    조현영
+                </div>
+                <div class="ratings">
+                    <i class="fa-sharp fa-solid fa-star"></i>
+                    <i class="fa-sharp fa-solid fa-star"></i>
+                    <i class="fa-sharp fa-solid fa-star"></i>
+                    <i class="fa-sharp fa-solid fa-star"></i>
+                    <i class="fa-sharp fa-solid fa-star"></i>
+                </div>
+                <div class="course_price">무료</div>
+            </div>
+
+            <div class="course_item">
+                <div class="course_img_container">
+                    <img src="https://cdn.inflearn.com/public/courses/324059/cover/7ac25dbb-9193-4c7d-98fb-22b8bb4eba54" alt="웹 게임을 만들며 배우는 React">
+                </div>
+                <div class="course_title">
+                    웹 게임을 만들며 배우는 React
+                </div>
+                <div class="course_owner">
+                    조현영
+                </div>
+                <div class="ratings">
+                    <i class="fa-sharp fa-solid fa-star"></i>
+                    <i class="fa-sharp fa-solid fa-star"></i>
+                    <i class="fa-sharp fa-solid fa-star"></i>
+                    <i class="fa-sharp fa-solid fa-star"></i>
+                    <i class="fa-sharp fa-solid fa-star"></i>
+                </div>
+                <div class="course_price">무료</div>
+            </div>
+
+            <div class="course_item">
+                <div class="course_img_container">
+                    <img src="https://cdn.inflearn.com/public/courses/324059/cover/7ac25dbb-9193-4c7d-98fb-22b8bb4eba54" alt="웹 게임을 만들며 배우는 React">
+                </div>
+                <div class="course_title">
+                    웹 게임을 만들며 배우는 React
+                </div>
+                <div class="course_owner">
+                    조현영
+                </div>
+                <div class="ratings">
+                    <i class="fa-sharp fa-solid fa-star"></i>
+                    <i class="fa-sharp fa-solid fa-star"></i>
+                    <i class="fa-sharp fa-solid fa-star"></i>
+                    <i class="fa-sharp fa-solid fa-star"></i>
+                    <i class="fa-sharp fa-solid fa-star"></i>
+                </div>
+                <div class="course_price">10,000원</div>
+            </div>
+
+            <div class="course_item">
+                <div class="course_img_container">
+                    <img src="https://cdn.inflearn.com/public/courses/324059/cover/7ac25dbb-9193-4c7d-98fb-22b8bb4eba54" alt="웹 게임을 만들며 배우는 React">
+                </div>
+                <div class="course_title">
+                    웹 게임을 만들며 배우는 React
+                </div>
+                <div class="course_owner">
+                    조현영
+                </div>
+                <div class="ratings">
+                    <i class="fa-sharp fa-solid fa-star"></i>
+                    <i class="fa-sharp fa-solid fa-star"></i>
+                    <i class="fa-sharp fa-solid fa-star"></i>
+                    <i class="fa-sharp fa-solid fa-star"></i>
+                    <i class="fa-sharp fa-solid fa-star"></i>
+                </div>
+                <div class="course_price">무료</div>
+            </div>
+        </div>
+
+    </section>
+
+    <section class="courses">
+        <div class="courses_title">
+            <h1>왕초보도 할 수 있어요 💪</h1>
+            <i class="fa-sharp fa-solid fa-chevron-right"></i>
+        </div>
+        <div class="courses_desc">이미 검증된 쉽고 친절한 입문 강의!!</div>
+        <div class="courses_container">
+            <div class="course_item">
+                <div class="course_img_container">
+                    <img src="https://cdn.inflearn.com/public/courses/324059/cover/7ac25dbb-9193-4c7d-98fb-22b8bb4eba54" alt="웹 게임을 만들며 배우는 React">
+                </div>
+                <div class="course_title">
+                    웹 게임을 만들며 배우는 React
+                </div>
+                <div class="course_owner">
+                    조현영
+                </div>
+                <div class="ratings">
+                    <i class="fa-sharp fa-solid fa-star"></i>
+                    <i class="fa-sharp fa-solid fa-star"></i>
+                    <i class="fa-sharp fa-solid fa-star"></i>
+                    <i class="fa-sharp fa-solid fa-star"></i>
+                    <i class="fa-sharp fa-solid fa-star"></i>
+                </div>
+                <div class="course_price">10,000원</div>
+            </div>
+
+            <div class="course_item">
+                <div class="course_img_container">
+                    <img src="https://cdn.inflearn.com/public/courses/324059/cover/7ac25dbb-9193-4c7d-98fb-22b8bb4eba54" alt="웹 게임을 만들며 배우는 React">
+                </div>
+                <div class="course_title">
+                    웹 게임을 만들며 배우는 React
+                </div>
+                <div class="course_owner">
+                    조현영
+                </div>
+                <div class="ratings">
+                    <i class="fa-sharp fa-solid fa-star"></i>
+                    <i class="fa-sharp fa-solid fa-star"></i>
+                    <i class="fa-sharp fa-solid fa-star"></i>
+                    <i class="fa-sharp fa-solid fa-star"></i>
+                    <i class="fa-sharp fa-solid fa-star"></i>
+                </div>
+                <div class="course_price">10,000원</div>
+            </div>
+
+            <div class="course_item">
+                <div class="course_img_container">
+                    <img src="https://cdn.inflearn.com/public/courses/324059/cover/7ac25dbb-9193-4c7d-98fb-22b8bb4eba54" alt="웹 게임을 만들며 배우는 React">
+                </div>
+                <div class="course_title">
+                    웹 게임을 만들며 배우는 React
+                </div>
+                <div class="course_owner">
+                    조현영
+                </div>
+                <div class="ratings">
+                    <i class="fa-sharp fa-solid fa-star"></i>
+                    <i class="fa-sharp fa-solid fa-star"></i>
+                    <i class="fa-sharp fa-solid fa-star"></i>
+                    <i class="fa-sharp fa-solid fa-star"></i>
+                    <i class="fa-sharp fa-solid fa-star"></i>
+                </div>
+                <div class="course_price">10,000원</div>
+            </div>
+
+            <div class="course_item">
+                <div class="course_img_container">
+                    <img src="https://cdn.inflearn.com/public/courses/324059/cover/7ac25dbb-9193-4c7d-98fb-22b8bb4eba54" alt="웹 게임을 만들며 배우는 React">
+                </div>
+                <div class="course_title">
+                    웹 게임을 만들며 배우는 React
+                </div>
+                <div class="course_owner">
+                    조현영
+                </div>
+                <div class="ratings">
+                    <i class="fa-sharp fa-solid fa-star"></i>
+                    <i class="fa-sharp fa-solid fa-star"></i>
+                    <i class="fa-sharp fa-solid fa-star"></i>
+                    <i class="fa-sharp fa-solid fa-star"></i>
+                    <i class="fa-sharp fa-solid fa-star"></i>
+                </div>
+                <div class="course_price">10,000원</div>
+            </div>
+
+            <div class="course_item">
+                <div class="course_img_container">
+                    <img src="https://cdn.inflearn.com/public/courses/324059/cover/7ac25dbb-9193-4c7d-98fb-22b8bb4eba54" alt="웹 게임을 만들며 배우는 React">
+                </div>
+                <div class="course_title">
+                    웹 게임을 만들며 배우는 React
+                </div>
+                <div class="course_owner">
+                    조현영
+                </div>
+                <div class="ratings">
+                    <i class="fa-sharp fa-solid fa-star"></i>
+                    <i class="fa-sharp fa-solid fa-star"></i>
+                    <i class="fa-sharp fa-solid fa-star"></i>
+                    <i class="fa-sharp fa-solid fa-star"></i>
+                    <i class="fa-sharp fa-solid fa-star"></i>
+                </div>
+                <div class="course_price">10,000원</div>
+            </div>
+
+            <div class="course_item">
+                <div class="course_img_container">
+                    <img src="https://cdn.inflearn.com/public/courses/324059/cover/7ac25dbb-9193-4c7d-98fb-22b8bb4eba54" alt="웹 게임을 만들며 배우는 React">
+                </div>
+                <div class="course_title">
+                    웹 게임을 만들며 배우는 React
+                </div>
+                <div class="course_owner">
+                    조현영
+                </div>
+                <div class="ratings">
+                    <i class="fa-sharp fa-solid fa-star"></i>
+                    <i class="fa-sharp fa-solid fa-star"></i>
+                    <i class="fa-sharp fa-solid fa-star"></i>
+                    <i class="fa-sharp fa-solid fa-star"></i>
+                    <i class="fa-sharp fa-solid fa-star"></i>
+                </div>
+                <div class="course_price">10,000원</div>
+            </div>
+        </div>
+
+    </section>
+
+    <section id="inflearn_participants">
+        <div id="inflearn_participants_container">
+            <div class="inflearn_participants_content">
+                <span id="num_of_participants">
+                    1,077,382
+                </span class="num_of_participants_etc">
+                <span class="num_of_participants_etc">
+                    명이
+                </span>
+                <br>
+                <div class="num_of_participants_etc" style="margin-top: 10px;">인프런과 함께합니다.</div>
+                <div id="num_of_participants_desc">
+                    <div>인프런은 강의의 수강생수, 평점을 투명하게 공개합니다.</div>
+                    <div>실제로 많은 온오프라인 학원들은 단기적인 성과를 높이기 위해</div>
+                    <div>잘나온 특정 후기만 노출 하거나, 아예 숨겨버리는 경우가 많습니다.</div>
+                    <div>반면 인프런은 강의에 대한 후기, 학생수 등 정보를 투명하게 공개합니다.</div>
+                    <div>신뢰성을 바탕으로 학습자들이 더 좋은 컨텐츠를 선택하고 교육의 질을 높입니다.</div>
+                </div>
+                <div id="inflearn_participants_buttons">
+                    <div id="participants_button1">
+                        수강평 더보기
+                    </div>
+                    <div id="participants_button2">
+                        기능/강좌 요청하기
+                    </div>
+                </div>
+                
+            </div>
+        </div>
+        <div id="inflearn_participants_container_right">
+            <div class="review_item">
+                <div>
+                    <span>xxx님</span><span>10시간 전</span>
+                </div>
+                <div>
+                    스프링의 핵심 원리 - 기본편
+                </div>
+                <div>
+                    스프링이 뭔지 모르고 냅따 강의보면서 프로젝트를 만들었었는데 영한님 강의를 보고 애노테이션이 뭐고 스프링이 어떻게 실행되는지, 로직 흐름, 빈 생성 원리 등을 파악할 수 있었습니다. 좋은 내용 체득하고 취업 준비 잘 하겠습니다. 좋은 강의 만들어 주셔서 감사합니다!!
+                </div>
+            </div>
+            <div class="review_item">
+                <div>
+                    <span>xxx님</span><span>10시간 전</span>
+                </div>
+                <div>
+                    스프링의 핵심 원리 - 기본편
+                </div>
+                <div>
+                    스프링이 뭔지 모르고 냅따 강의보면서 프로젝트를 만들었었는데 영한님 강의를 보고 애노테이션이 뭐고 스프링이 어떻게 실행되는지, 로직 흐름, 빈 생성 원리 등을 파악할 수 있었습니다. 좋은 내용 체득하고 취업 준비 잘 하겠습니다. 좋은 강의 만들어 주셔서 감사합니다!!
+                </div>
+            </div>
+            <div class="review_item">
+                <div>
+                    <span>xxx님</span><span>10시간 전</span>
+                </div>
+                <div>
+                    스프링의 핵심 원리 - 기본편
+                </div>
+                <div>
+                    스프링이 뭔지 모르고 냅따 강의보면서 프로젝트를 만들었었는데 영한님 강의를 보고 애노테이션이 뭐고 스프링이 어떻게 실행되는지, 로직 흐름, 빈 생성 원리 등을 파악할 수 있었습니다. 좋은 내용 체득하고 취업 준비 잘 하겠습니다. 좋은 강의 만들어 주셔서 감사합니다!!
+                </div>
+            </div>
+            <div class="review_item">
+                <div>
+                    <span>xxx님</span><span>10시간 전</span>
+                </div>
+                <div>
+                    스프링의 핵심 원리 - 기본편
+                </div>
+                <div>
+                    스프링이 뭔지 모르고 냅따 강의보면서 프로젝트를 만들었었는데 영한님 강의를 보고 애노테이션이 뭐고 스프링이 어떻게 실행되는지, 로직 흐름, 빈 생성 원리 등을 파악할 수 있었습니다. 좋은 내용 체득하고 취업 준비 잘 하겠습니다. 좋은 강의 만들어 주셔서 감사합니다!!
+                </div>
+            </div>
+            <div class="review_item">
+                <div>
+                    <span>xxx님</span><span>10시간 전</span>
+                </div>
+                <div>
+                    스프링의 핵심 원리 - 기본편
+                </div>
+                <div>
+                    스프링이 뭔지 모르고 냅따 강의보면서 프로젝트를 만들었었는데 영한님 강의를 보고 애노테이션이 뭐고 스프링이 어떻게 실행되는지, 로직 흐름, 빈 생성 원리 등을 파악할 수 있었습니다. 좋은 내용 체득하고 취업 준비 잘 하겠습니다. 좋은 강의 만들어 주셔서 감사합니다!!
+                </div>
+            </div>
+        </div>
+        
+    </section>
+    
+    <section id="banner_bottom">
+        <div>
+            <img src="https://cdn.inflearn.com/public/main_sliders/3b67a1a1-aae3-442e-8e17-791b7cdfb5f5/bottom-1920-205-%281111%29.jpg" alt="배너1"/>
+        </div>
+    </section>
+
+    <section id="group-section">
+        <div id="group-section-desc">
+            이미 많은 기업 구성원들이 인프런에서 성장하고 있어요.
+        </div>
+        <div id="group-list">
+            <img src="https://cdn.inflearn.com/public/group_logo/0/c085de89-e640-4bc0-afad-efd1e96dbb58/%E1%84%85%E1%85%A1%E1%84%8B%E1%85%B5%E1%86%AB.png" alt="">
+            <img src="https://cdn.inflearn.com/public/group_logo/0/0add4321-40e2-46db-9aac-3222b25a69c4/%E1%84%8B%E1%85%AE%E1%84%8B%E1%85%A1%E1%84%92%E1%85%A1%E1%86%AB%20%E1%84%92%E1%85%A7%E1%86%BC%E1%84%8C%E1%85%A6%E1%84%83%E1%85%B3%E1%86%AF.png" alt="">
+            <img src="https://cdn.inflearn.com/public/group_logo/0/34618dc7-2862-4db0-9bbc-631ca0c8f5b5/sk.png
+            " alt="">
+            <img src="https://cdn.inflearn.com/public/group_logo/0/1429748f-8c44-4941-8913-752071578eaf/%E1%84%82%E1%85%A6%E1%84%8B%E1%85%B5%E1%84%87%E1%85%A5.png" alt="">
+            <img src="https://cdn.inflearn.com/public/group_logo/0/e7dd4c2a-8496-4708-b9fd-ae66317e40ad/%E1%84%82%E1%85%A6%E1%86%A8%E1%84%89%E1%85%B3%E1%86%AB.png" alt="">
+            <img src="https://cdn.inflearn.com/public/group_logo/0/10b49bf2-cd9a-4501-ac3c-84059d04f171/%E1%84%89%E1%85%A1%E1%86%B7%E1%84%89%E1%85%A5%E1%86%BC.png" alt="">
+            <img src="https://cdn.inflearn.com/public/group_logo/0/a041f2fa-7f40-4517-bdb7-822fc7800d80/%E1%84%8F%E1%85%A1%E1%84%8F%E1%85%A1%E1%84%8B%E1%85%A9.png" alt="">
+            <img src="https://cdn.inflearn.com/public/group_logo/0/b47b4ead-5141-46ec-8003-81c6dbc2e5b7/LG.png" alt="">
+            <img src="https://cdn.inflearn.com/public/group_logo/0/4aa479b9-4e05-4f8e-84b3-1fb7edb60c0c/nc.png" alt="">
+        </div>
+    </section>
+
+    <section id="apply-services">
+        <div id="apply-services-container">
+            <div id="apply-services-title">
+                다양한 서비스를 신청하세요.
+            </div>
+            <div id="apply-services-desc">
+                인프런의 지식공유자 ˙ 비즈니스 ˙ 대학생 신청방법에 대해 알아보세요.
+            </div>
+            <div id="service-item-container">
+                <div class="service-item">
+                    <div>지식 공유자 되기</div>
+                    <div>9개월간 온라인 기술 강의로만 1억원!
+                        <br>
+                        나의 지식을 나눠 사람들에게 배움의 기회를 주고, 의미있는 대가를 가져가세요.
+                    </div>
+                </div>
+
+                <div class="service-item">
+                    <div>지식 공유자 되기</div>
+                    <div>9개월간 온라인 기술 강의로만 1억원!
+                        <br>
+                        나의 지식을 나눠 사람들에게 배움의 기회를 주고, 의미있는 대가를 가져가세요.
+                    </div>
+                </div>
+
+                <div class="service-item">
+                    <div>지식 공유자 되기</div>
+                    <div>9개월간 온라인 기술 강의로만 1억원!
+                        <br>
+                        나의 지식을 나눠 사람들에게 배움의 기회를 주고, 의미있는 대가를 가져가세요.
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- 주의 : <script> 태그는 body 태그가 닫히는 부분 바로 위에 위치(import)시켜야 한다. -->
+    <script type="text/javascript" src="./index.js"></script>
+</body>
+</html>
+
+<!-- 이미지 링크들
+https://cdn.inflearn.com/public/courses/324059/cover/7ac25dbb-9193-4c7d-98fb-22b8bb4eba54
+https://cdn.inflearn.com/public/courses/324718/course_cover/9fa72fd8-ce56-4091-aa73-a31145acf37e/rookiss-rpg-1.png
+https://cdn.inflearn.com/public/courses/326354/cover/1d6f78c0-86a5-4585-b7f5-49d57582e964
+https://cdn.inflearn.com/public/courses/327126/cover/13b0e441-4a3d-44cb-acbb-d86af2412e18/327126-eng-2.png
+https://cdn.inflearn.com/public/courses/327418/cover/339f7806-b3f4-4f99-977f-cde60b7f265b/327418-eng.png 
+https://cdn.inflearn.com/public/courses/328001/cover/e11c6e6a-14c6-494a-954d-5fc625eb89a6/328001-eng.png
+https://cdn.inflearn.com/public/courses/328376/cover/6baa63b8-8f8f-473d-9b55-9047a521037e/328376-eng.jpg
+https://cdn.inflearn.com/public/courses/328577/cover/d7cd62c2-db07-45d8-af8d-a3fa728cd8e7/inflearn-logo.jpg
+https://cdn.inflearn.com/public/courses/328742/cover/e1dfb69f-15e7-4ee9-8118-65b400f622f4/328742-eng-resize.png
+https://cdn.inflearn.com/public/courses/329045/cover/29dd3a0f-8046-4233-8f69-b4a2d71dd8de/329045-eng.png
+https://cdn.inflearn.com/public/courses/329092/cover/3955bceb-5847-4a99-b235-964833bbe450/329092-eng.jpg
+-->
+
+<!-- 하단 배너 이미지 url
+https://cdn.inflearn.com/public/main_sliders/3b67a1a1-aae3-442e-8e17-791b7cdfb5f5/bottom-1920-205-%281111%29.jpg -->
+
+<!-- 기업 로고 url
+https://cdn.inflearn.com/public/group_logo/0/c085de89-e640-4bc0-afad-efd1e96dbb58/%E1%84%85%E1%85%A1%E1%84%8B%E1%85%B5%E1%86%AB.png
+
+https://cdn.inflearn.com/public/group_logo/0/0add4321-40e2-46db-9aac-3222b25a69c4/%E1%84%8B%E1%85%AE%E1%84%8B%E1%85%A1%E1%84%92%E1%85%A1%E1%86%AB%20%E1%84%92%E1%85%A7%E1%86%BC%E1%84%8C%E1%85%A6%E1%84%83%E1%85%B3%E1%86%AF.png
+
+https://cdn.inflearn.com/public/group_logo/0/34618dc7-2862-4db0-9bbc-631ca0c8f5b5/sk.png
+
+https://cdn.inflearn.com/public/group_logo/0/1429748f-8c44-4941-8913-752071578eaf/%E1%84%82%E1%85%A6%E1%84%8B%E1%85%B5%E1%84%87%E1%85%A5.png
+
+https://cdn.inflearn.com/public/group_logo/0/e7dd4c2a-8496-4708-b9fd-ae66317e40ad/%E1%84%82%E1%85%A6%E1%86%A8%E1%84%89%E1%85%B3%E1%86%AB.png
+https://cdn.inflearn.com/public/group_logo/0/10b49bf2-cd9a-4501-ac3c-84059d04f171/%E1%84%89%E1%85%A1%E1%86%B7%E1%84%89%E1%85%A5%E1%86%BC.png
+https://cdn.inflearn.com/public/group_logo/0/a041f2fa-7f40-4517-bdb7-822fc7800d80/%E1%84%8F%E1%85%A1%E1%84%8F%E1%85%A1%E1%84%8B%E1%85%A9.png
+https://cdn.inflearn.com/public/group_logo/0/b47b4ead-5141-46ec-8003-81c6dbc2e5b7/LG.png
+https://cdn.inflearn.com/public/group_logo/0/4aa479b9-4e05-4f8e-84b3-1fb7edb60c0c/nc.png -->
