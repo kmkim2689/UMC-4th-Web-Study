@@ -197,10 +197,16 @@ header {
 	border: none;
 	align-items: center;
 	justify-content: center;
+	outline: none;
 }
 
 #search > img {
 	margin-left: 10px;
+	cursor: pointer;
+}
+
+#search > img:hover {
+	cursor: pointer;
 }
 
 .login_sign_up {
@@ -642,6 +648,7 @@ header {
 #alert-icon {
 	background-repeat: no-repeat;
 	background-image: url("https://cf.channel.io/asset/plugin/images/chat-error-filled.svg");
+	
 }
 
 #talk {
@@ -667,6 +674,6 @@ header {
 }
 
 #talk-content {
-	width: 80px;
+	width: 250px;
 	height: 100px;
 }
