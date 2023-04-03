@@ -469,3 +469,204 @@ header {
 	height: 50%;
 	background-color: gray;
 }
+
+.floating-button {
+	/* position : 어떻게 스크롤을 하든 위치는 항상 한 곳에 고정되어 있을 것이므로, fixed로 한다. */
+	position: fixed;
+	/* fixed : 전체 화면을 기준으로 위치를 설정한다. 같이 쓰이는 속성들로 top, bottom, right, left가 있는데, 예를 들어 bottom이 0px라면 바닥에 딱 붙어있는 상태가 된다. bottom과 right가 사용되었으므로, 여기서는 오른쪽 아래에서 약간 떨어진 형태가 될 것. */
+	bottom: 20px;
+	right: 20px;
+	/* 말 그대로 background 색상을 지정한다. */
+	/* 그냥 color 속성은 뷰 내부의 요소의 색깔을 이른다.(텍스트) */
+	color: #fff;
+	/* 둥글기 정도를 나타낸다. px로도 할 수 있고 %로도 할 수 있다. */
+	border-radius: 10px;
+	width: 157px;
+	height: 74px;
+	/* 말 그대로, 뷰 내부에서 글자의 정렬을 결정한다. text-align의 경우, 좌우로 정렬을 어떻게 하느냐를 결정한다.(center는 가운데 정렬.) */
+	align-items: center;
+	overflow: hidden;
+	font-size: 24px;
+	/* line-height를 뷰의 높이와 동일하게 설정하면, 수직으로 가운데 정렬된다. */
+	line-height: 60px;
+	/* cursor 속성 : 요소에 커서가 hover 될 때, 마우스 포인터가 어떻게 보여질지 결정한다.
+	pointer : 손 모양 아이콘(하이퍼링크를 갖다댈 때 사용.)
+	auto : 상황에 따라 알아서 보여줌
+	default : 일반 화살표 모양 커서
+	text : 텍스트를 가져댜댈 때 나오는 세로로 긴 모양
+	move : 사방으로 뻗어나가는 화살표. 창을 이동할 때 사용
+	wait : 돌아가는 모양. 로딩중일 때 사용
+	help : a cursor with a question mark */
+	cursor: pointer;
+}
+
+.floating-button > img {
+	width: 157px;
+	height: 74px;
+	align-items: center;
+	justify-content: center;
+}
+
+#contact-form {
+	position: fixed;
+	bottom: 20px;
+	right: 20px;
+	width: 370px;
+	height: 600px;
+	border-radius: 30px;
+	background-color: aliceblue;
+	display: none;
+}
+
+#top-navigation {
+	display: flex;
+	flex-direction: row;
+	height: 60px;
+	width: 90%;
+	align-items: center;
+	overflow: hidden;
+	justify-content: center;
+	color: #00C471;
+	margin-left: 10px;
+}
+
+#top-navigation > img {
+	border-radius: 10px;
+
+}
+
+#top-navigation > span {
+	margin-left: 10px;
+	margin-right: 160px;
+	font-size: 20px;
+	color: black;
+	font-weight: bold;
+}
+
+#top-navigation > svg {
+	margin-left: 10px;
+}
+
+#form-desc {
+	width: 90%;
+	height: 40px;
+	font-size: 16px;
+	line-height: 20px;
+	margin-left: 15px;
+	color: #00000066;
+}
+
+#form-detail {
+	width: 90%;
+	margin: 15px;
+	height: 250px;
+	background-color: white;
+	border-radius: 10px;
+	align-items: center;
+}
+
+#form-info {
+	display: flex;
+	flex-direction: row;
+	justify-content: center;
+	margin: 10px;
+}
+
+#form-profile {
+	width: 10%;
+	height: 100px;
+
+}
+
+#form-content {
+	margin-left: 10px;
+	width: 90%;
+}
+
+#form-content > div {
+	margin-top: 10px;
+}
+
+#exit {
+	cursor: pointer;
+}
+
+#button-inquiry {
+	width: 90%;
+	height: 50px;
+	background: linear-gradient(90deg, rgb(0, 196, 113) 48.41%, rgb(0, 196, 159)) 100% center;
+	text-align: center;
+	border-radius: 10px;
+	line-height: 50px;
+	color: white;
+	font-weight: bold;
+	margin-left: 20px;
+	margin-right: 20px;
+	margin-top: 20px;
+}
+
+#button-inquiry > div {
+	text-align: center;
+	cursor: pointer;
+
+}
+
+#inquire-form {
+	position: fixed;
+	bottom: 20px;
+	right: 20px;
+	width: 370px;
+	height: 600px;
+	border-radius: 30px;
+	background-color: white;
+	display: none;
+	overflow-y: scroll;
+}
+
+#top-nav-inquire {
+	background-color: rgba(239, 239, 240, 0.8);
+	height: 60px;
+	width: 100%;
+	display: flex;
+	flex-direction: row;
+	align-items: center;
+	justify-content: center;
+	font-weight: bold;
+	text-align: center;
+}
+
+#inflearn-inquiry-exit {
+	margin-left: 250px;
+}
+
+#alert-icon {
+	background-repeat: no-repeat;
+	background-image: url("https://cf.channel.io/asset/plugin/images/chat-error-filled.svg");
+}
+
+#talk {
+	display: flex;
+	flex-direction: row;
+	width: 90%;
+	height: 100px;
+	border: 0.5px solid black;
+}
+
+#profile {
+	width: 20px;
+	height: 20px;
+	overflow: hidden;
+	position: absolute;
+	align-items: center;
+	border: 0.5px solid black;
+}
+
+#profile > img {
+	width: 100%;
+	height: 100%;
+}
+
+#talk-content {
+	width: 80px;
+	height: 100px;
+}
