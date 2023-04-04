@@ -20,7 +20,6 @@ time, mark, audio, video {
 	font: inherit;
 	vertical-align: baseline;
 }
-
 /* HTML5 display-role reset for older browsers */
 article, aside, details, figcaption, figure, 
 footer, header, hgroup, menu, nav, section {
@@ -89,12 +88,14 @@ table {
 
 
 .top_banner_image_container > img {
+
 	display: block;
 	/* 이미지의 높이와 너비는 부모와 똑같이. */
 	width: 100%;
 	height: 100%;
 	/* margin을 0 auto로 설정하면, 부모 내부에서 정 가운데로 정렬된다. 여기서 0값은, 상하좌우에 대하여 여백을 주지 않겠다는 의미이고, auto는 부모 내부에서 좌우 중앙으로 정렬하겠다는 의미 */
 	margin: 0 auto;
+	
 }
 
 #top_board_space {
@@ -212,425 +213,288 @@ header {
 	font-size: 10px;
 }
 
-#banner {
-    height: 320px;
+#boot-camp-banner {
 	display: block;
+	height: 360px;
+	background: linear-gradient(99deg, #31b69e 17%, #3ec674 83%);
+    background-image: linear-gradient(99deg, rgb(49, 182, 158) 17%, rgb(62, 198, 116) 83%);
+    background-position-x: initial;
+    background-position-y: initial;
+    background-size: initial;
+    background-repeat-x: initial;
+    background-repeat-y: initial;
+    background-attachment: initial;
+    background-origin: initial;
+    background-clip: initial;
+    background-color: initial;
 }
 
-
-
-.outer {
-	width: 100%;
-	height: 100%;
-	margin: 0 auto;
-	overflow-x: hidden;
-  }
-
-/* 스크롤바를 제거 */
-.outer::-webkit-scrollbar {
-	display: none;
-}
-
-.inner-list {
-	display: flex;
-	transition: .3s ease-out;
-	height: 100%;
-}
-
-.inner {
-	padding: 0;
-}
-
-#second_banner {
-	display: flex;
-	flex-direction: row;
-}
-
-#second_banner > div {
-	width: 30%;
-	display: block;
-	background-color: black;
-	color: white;
-}
-
-.banner_badge {
-	display: inline-block;
-	background-color: #5fdc28;
-	width: 135px;
-	height: 24px;
-	padding: 10px;
-	border-radius: 10px;
-	margin-left: 20px;
-	margin-top: 20px;
-	font-weight: bold;
-	text-align: center;
-	line-height: 24px;
-}
-
-.banner_title {
-	font-size: 32px;
-	color: white;
-	font-weight: 700;
-}
-
-.inner > img {
-	width: 70%;
-	height: 100%;
-}
-
-#search_lectures {
-	height: 172px;
-}
-
-#search_lectures_description {
-	font-size: 24px;
-	font-family: "나눔고딕";
-	text-align: center;
-	margin-bottom: 20px;
-	margin-top: 50px;
-}
-
-#search_lectures_form {
-	width: 600px;
-	height: 54px;
-	background-color: rgba(29,192,120,.12);
-	border: 1px solid rgba(66, 114, 93, 0.24);
-	border-radius: 30px;
-	margin: 0 auto;
-	display: flex;
-	flex-direction: row;
-	align-items: center;
-	justify-content: center;
-}
-
-#search_lectures_form > input {
-	background: transparent;
-	border: none;
-	height: 80%;
+#banner-content-container {
 	width: 80%;
-}
-
-#search_lectures_form > img {
-	margin-left: 10px;
-	height: 50%;
-}
-
-#lecture_categories {
-	display: flex;
-	align-items: start;
-	height: 140px;
-}
-
-#lecture_categories_list {
-	margin-left: 20px;
-	margin-right: 20px;
-	display: flex;
-	flex-direction: row;
 	height: 80%;
-	width: 100%;
-	align-items: center;
-	justify-content: center;
-	/* 스크롤을 만들기 위한 작업 */
-	/* 가로로 스크롤 하도록 하기 위한 작업 */
-	/* white-space 속성을 nowrap로 설정. 자동 줄바꿈이 되지 않도록 한다. */
-	overflow-x: scroll;
-	white-space: nowrap;	
-	flex-grow: 1;
-}
-
-/* 스크롤 바를 없애기 위한 작업 */
-#lecture_categories_list::-webkit-scrollbar {
-	display: none;
-}
-
-.category_item {
-	width: 150px;
-	height: 94px;
-	display: flex;
-	flex-direction: column;
-	align-items: center;
-	justify-content: center;
-}
-
-.category_img_container {
-	height: 54px;
-	width: 100%;
-	display: flex;
-	align-items: center;
-	justify-content: center;
-	overflow: hidden;
-}
-
-.category_img_container > img {
-	height: 100%;
-	width: 54px;
-	align-items: center;
-}
-
-.category_text {
-	margin-top: 20px;
-	font-weight: bold;
-	font-size: 15px;
-	align-items: center;
-}
-
-.courses {
-	display: block;
-	margin-left: 32px;
-	margin-right: 32px;
-}
-
-.courses_title {
-	display: flex;
-	flex-direction: row;
-	margin-top: 10px;
-}
-
-.courses_title > h1 {
-	font-size: 24px;
-	font-weight: bold;
-}
-
-.fa-sharp fa-solid fa-chevron-right {
-	height: 100%;
-	width: 20px;
-}
-
-.courses_desc {
-	margin-top: 10px;
-	color: gray;
-}
-
-.courses_container {
-	display: flex;
-	flex-direction: row;
-	justify-content: center;
-	align-items: center;
-	overflow: hidden;
-	height: 300px;
-	margin-top: 20px;
-}
-
-.course_item {
-	display: block;
-	width: 222px;
-	height: 95%;
-	margin-right: 20px;
-}
-
-.course_img_container {
-	width: 222px;
-	height: 145px;
-	align-items: center;
-	justify-content: center;
-	overflow: hidden;
-}
-
-.course_img_container > img {
-	width: 100%;
-	height: 100%;
-}
-
-.course_title {
-	width: 100%;
-	height: 48px;
-	font-size: 16px;
-	font-weight: bold;
-	margin-top: 10px;
-}
-
-.course_owner {
-	width: 100%;
-	height: 21px;
-	color: gray;
-}
-
-.fa-sharp fa-solid fa-star {
-	color: yellow;
-}
-
-.course_price {
-	font-size: 16px;
-	color: blue;
-	font-weight: bold;
-}
-
-#inflearn_participants {
-	display: flex;
-	flex-direction: row;
-	height: 400px;
-	align-items: center;
-	justify-content: center;
-	margin: 30px;
-}
-
-#inflearn_participants_container {
-	display: block;
-	justify-content: center;
-	align-items: center;
-	height: 300px;
-	/* line-height 속성의 경우, 세로 중앙 정렬의 용도로 사용하고자 할 때는 안에 텍스트 하나만 들어간 경우에 대해서만 유효하다... 말 그대로 line-height는 한 줄 당 길이를 의미하기 때문에, 한 줄당 길이를 요소의 높이와 같게 설정하면, 한 줄만 나오게 되기 때문 */
-}
-
-.inflearn_participants_content {
 	margin: 0 auto;
-	/* 수동으로 수직 위치를 설정하는 방법 : postiion을 relative로 설정하고, top값을 원하는 만큼 준다. */
-	position: relative;
-	top: 20px;
+	top: 30px;
+	display: block;
 }
 
-#num_of_participants {
-	font-size: 30px;
+#banner_title {
+	color: white;
 	font-weight: bold;
-	color: rgb(54, 144, 54);
+	font-size: 32px;
+
 }
 
-.num_of_participants_etc {
-	font-size: 30px;
+#banner_desc {
+	color: white;
+	font-size: 18px;
+	margin-top: 20px;
+
+}
+
+#course_container {
+	width: 100%;
+	height: 190px;
+	border-radius: 12px;
+	margin-top: 20px;
+	display: flex;
+	flex-direction: row;
+	flex-direction: row;
+	background-color: hsla(0,0%,100%,.64);
+}
+
+#course_img_container {
+	width: 25%;
+	height: 100%;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	overflow: hidden;
+	
+}
+
+#course_img_container > img {
+	width: 100%;
+	height: 100%;
+	/* border-radius : left-top부터 시계방향으로. */
+	border-radius: 12px 0px 0px 12px;
+
+}
+
+#banner_desc_container {
+	width: 75%;
+	height: 100%;
+	display: block;
+	align-items: center;
+}
+
+#banner_desc_title {
+	font-size: 18px;
 	font-weight: bold;
-	color: black
 }
 
-#num_of_participants_desc {
+#banner_desc_content {
+	font-size: 16px;
+	margin-top: 20px;
+	height: 40px;
+	line-height: 20px;
+	overflow: hidden;
+	text-overflow: ellipsis;
+}
+
+#banner_desc_container > div {
+	height: 70%;
+	width: 90%;
+	margin: 0 auto;
 	margin-top: 30px;
 }
 
-#num_of_participants_desc > div {
-	font-size: 15px;
-	color: gray;
-	height: 20px;
+#chip_review {
+	width: 176px;
+	height: 34px;
+	border-radius: 20px;
+	margin-top: 20px;
+	background-color: white;
 }
 
-#inflearn_participants_buttons {
-	height: 45px;
-	display: flex;
-	flex-direction: row;
-	margin-top: 50px;
-}
-
-#participants_button1 {
-	height: 38px;
-	width: 140px;
-	border: 1px solid #1dc078;
-	border-radius: 3px;
-	font-size: 16px;
-	/* text-align : 텍스트 수평 가운데 정렬 */
+#intro {
+	height: 105px;
+	background-color: #343a40;
 	text-align: center;
-	/* 현재 태그의 display가 만약 flex 속성으로 되어있다면, 아래와 같이 justify-content도 설정을 해주어야 가운데 정렬이 된다. 안하면 안됨.  */
-	/* justify-content: center; */
-	/* 세로도 가운데 정렬을 하고 싶다면, height와 같은 값으로 line-height를 설정한다. */
-	line-height: 38px;
-}
-
-#participants_button2 {
-	height: 38px;
-	width: 172px;
-	border: 1px solid #1dc078;
-	border-radius: 3px;
-	font-size: 16px;
-	/* text-align : 텍스트 수평 가운데 정렬 */
-	text-align: center;
-	/* 현재 태그의 display가 만약 flex 속성으로 되어있다면, 아래와 같이 justify-content도 설정을 해주어야 가운데 정렬이 된다. 안하면 안됨.  */
-	/* justify-content: center; */
-	line-height: 38px;
-	margin-left: 10px;
-}
-
-#inflearn_participants_container_right {
-	display: block;
-	width: 600px;
-	height: 100%;
-	overflow-y: scroll;
-}
-
-.review_item {
-	width: 80%;
-	/* height는 auto가 기본값. 이는 콘텐츠가 들어간 만큼으로 높이를 조절한다는 의미 */
-	height: auto;
-	/* '내부' 요소에 대해 margin을 auto로 지정하면 가운데 정렬이 된다. */
-	margin: 0 auto;
-	margin-bottom: 50px;
-}
-
-#banner_bottom {
-	height: auto;
-	border: 0.5px solid black;
-	overflow-x: hidden;
-}
-
-#group-section {
-	height: 204px;
-	padding: 64px 32px 44px;
-	border: 0.5px solid black;
-	display: flex;
-	align-items: center;
-	justify-content: center;
-	flex-direction: column;
-}
-
-#group-section-desc {
-	line-height: 1.4;
-    letter-spacing: -.3px;
-    font-size: 20px;
-    margin-bottom: 20px;
-    font-weight: 700;
-    text-align: center;
-}
-
-#group-list {
-	display: flex;
-	flex-direction: row;
-	width: 80%;
-	height: auto;
-	overflow-x: hidden;
-	white-space: pre-wrap;
-}
-
-#group-list img {
-	padding: 30px;
-	width: 100px;
-	height: 50px;
-}
-
-#apply-services {
-	height: 400px;
-	display: flex;
-	flex-direction: row;
-	border: 0.5px solid black;
-	align-items: center;
-	justify-content: center;
-}
-
-#apply-services-container {
-	height: 100%;
-	width: 95%;
-
-}
-
-#apply-services-title {
-	font-size: 24px;
+	line-height: 105px;
+	font-size: 22px;
 	font-weight: bold;
-	color: black;
+	color: white;
 }
 
-#apply-services-desc {
+#intro2 {
+	height: 358px;
+	display: block;
+	align-items: center;
+}
+
+#question {
+	width: 360px;
+	background: #343a40;
+	border-radius: 8px;
+	padding: 12px;
+	text-align: center;
+	height: 20px;
+	line-height: 20px;
+	font-size: 18px;
+	color: white;
+	margin: 0 auto;
+	margin-top: 40px;
+	font-weight: bold;
+}
+
+#intro2 > h3 {
+	font-size: 27px;
+	font-weight: bold;
+	width: 480px;
+	text-align: center;
+	margin: 0 auto;
 	margin-top: 10px;
-	font-size: 15px;
-	color: gray;
+	margin-bottom: 10px;
+	line-height: 35px;
 }
 
-#service-item-container {
-	width: 100%;
-	height: 150px;
+.description1 {
+	font-size: 18px;
+	width: 480px;
+	text-align: center;
+	margin: 0 auto;
+	line-height: 28px;
+}
+
+#description2 {
+	font-size: 14px;
+	width: 480px;
+	text-align: center;
+	margin: 0 auto;
+	margin-top: 20px;
+}
+
+#description3 {
+	font-size: 14px;
+	width: 480px;
+	text-align: center;
+	margin: 0 auto;
+	margin-top: 10px;
+}
+
+#image_description {
+	height: 430px;
 	display: flex;
 	flex-direction: row;
+	align-items: center;
+	justify-content: center;
 }
 
-.service-item {
+#image_description > div {
+	height: 90%;
+	width: 50%;
 	display: block;
-	width: 370px;
-	height: 100%;
-	border: 0.3px solid gray;
-	border-radius: 3px;
-	padding: 32px 42px;
+}
+
+.img_container {
+	width: 70%;
+	height: 80%;
+	margin: 0 auto;
+	overflow: hidden;
+}
+
+.text_container {
+	margin: 0 auto;
+	background-color: black;
+	color: white;
+	font-size: 16px;
+	text-align: center;
+	margin-top: 30px;
+	padding: 10px;
+	border-radius: 10px;
+	width: 200px;
+}
+
+.ratings {
+	margin-top: 30px;
+	display: flex;
+	flex-direction: row;
+	align-items: center;
+	justify-content: center;
+}
+
+.ratings > div {
+	width: 50%;
+	height: 230px;
+}
+
+.rating_item {
+	width: 70%;
+	height: 85%;
+	border: 0.5px solid gray;
+	margin: 0 auto;
+	border-radius: 10px;
+}
+
+#start_paragraph {
+	height: 86px;
+	display: block;
+}
+
+#start {
+	text-align: center;
+	height: 60px;
+	font-size: 16px;
+	line-height: 30px;
+}
+
+#start_desc {
+	text-align: center;
+	height: 30px;
+	font-size: 12px;
+	line-height: 30px;
+	color: gray;
+	margin-top: 5px;
+}
+
+#bottom_banner {
+	width: 85%;
+	height: 80px;
+	background-color: #00c968;
+	margin: 0 auto;
+	margin-top: 80px;
+	border-radius: 5px;
+	text-align: start;
+	line-height: 80px;
+	font-size: 16px;
+	color: white;
+	font-weight: 600;
+	padding-inline-start: 30px;
+}
+
+#courses {
+	margin: 0 auto;
+	height: 484px;
+	width: 87%;
+	margin-top: 50px;
+	margin-bottom: 50px;
+	display: block;
+}
+
+#courses_title {
+	font-size: 24px;
+	font-weight: 700;
+}
+
+#chip {
+	height: 36px;
+	width: 78px;
+	font-size: 15px;
+	border: 0.5px solid #00c968;
+	border-radius: 20px;
+	color: #00c968;
+	line-height: 36px;
+	text-align: center;
+	font-weight: 500;
+	margin-top: 20px;
 }

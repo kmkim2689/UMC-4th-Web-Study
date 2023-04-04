@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>로그인</title>
+    <!-- 하나의 html 파일에 여러개의 css 파일을 연결시킬 수 있다. -->
+    <link rel="stylesheet" href="styles/reset.css">
+    <link rel="stylesheet" href="styles/style.css">
+</head>
+<body>
+    <!-- 1. 쿠팡 로고 이미지. 특성을 생각해보면, 이 이미지는 클릭하였을 때, 쿠팡 홈 화면으로 넘어간다는 특성이 있다. 따라서 h1(헤드라인) 내부에 하이퍼링크가 있고, 이 하이퍼링크의 겉모습은 이미지여야 한다. 따라서 h1>a>img -->
+    <h1><a href="#"><img src="https://static.coupangcdn.com/image/static/login/logo-coupang.x2.20201201.png" alt="z쿠팡"></a></h1>
+
+    <!-- 2. 로그인이 이뤄지는 부분은 모두 main으로 묶는다. -->
+    <main>
+        <!-- 아이디, 비밀번호를 입력하는 폼이 필요하다. -->
+        <form action="#" method="post" id="login-form">
+            <fieldset>
+                <!-- 안보이도록 할 것임. -->
+                <legend class="skip">로그인</legend>
+                <!-- 아이디, 비밀번호 모두 같은 양식이므로, ul안의 li 2개로 구현. -->
+                <ul>
+                    <li>
+                        <!-- 옆으로 나가는 형제태그 2개로 구성한다. -->
+                        <span class="id-bg">
+                            <!-- 아이디 아이콘 -->
+                            
+                        </span>
+                        <span>
+                            <!-- input text -->
+                            <!-- text의 힌트를 제공하는 속성 : placeholder="미리 보여줄 글자" -->
+                            <!-- name : input 태그의 이름을 설정 <input> 요소의 이름을 명시합니다. name 속성은 폼(form)이 제출된 후 서버에서 폼 데이터(form data)를 참조하기 위해 사용되거나, 자바스크립트에서 요소를 참조하기 위해 사용됩니다. -->
+                            <input type="text" placeholder="아이디(이메일)" name="user_id">
+                        </span>
+                    </li>
+
+                    <!-- 아이디 경고 메시지 -->
+                    <!-- 클래스의 경우, 공통 클래스와 개별 클래스를 한번에 정의할 수 있음. 공백을 하나 띄워놓는 방식으로 활용한다. -->
+                    <li class="error id-error">
+                        아이디를 입력해주세요.
+                    </li>
+
+                    <!-- 비밀번호 입력 -->
+                    <li>
+                        <span class="pw-bg">
+                            <!-- 비밀번호 아이콘 -->
+                            
+                        </span>
+                        <span>
+                            <!-- input text -->
+                            <!-- text의 힌트를 제공하는 속성 : placeholder="미리 보여줄 글자" -->
+                            <input type="password" placeholder="비밀번호" name="user_pw">
+                        </span>
+                        <!-- 비밀번호 전체 보여주기/숨기기 -->
+                        <span class="pw-show-hide"></span>
+                    </li>
+
+                    <!-- 비밀번호 경고 메시지 -->
+                    <li class="error pw-error">
+                        비밀번호를 입력해주세요.
+                    </li>
+                </ul>
+                <!-- 자동로그인 체크박스 + 아이디/비번찾기 -->
+                <div class="btm">
+                    <p>
+                        <!-- 캡션(제목)과 폼 요소를 하나로 묶기 위해, label 태그를 사용한다. 캡션을 클릭해도 폼 요소가 focus되는 효과를 준다. -->
+                        <label>
+                            <input type="checkbox" name="login-y" id="login-y">
+                            <span>자동로그인</span>
+                        </label>
+                    </p>
+                    <!-- 아이디/비밀번호 찾기 -->
+                    <a href="#" class="idpw-search">아이디(이메일)/비밀번호 찾기</a>
+                </div>
+                <!-- 로그인 버튼. 이 버튼 역시 필드셋에 포함된다. 이 버튼을 누르면 위에 텍스트 인풋에서 받아온 값들을 네트워크에 제출하는 것이 필요하므로, type을 submit으로 설정한다. -->
+                <button type="submit" id="login-btn">로그인</button>
+            </fieldset>
+        </form>
+        <hr>
+        <!-- 회원가입 버튼 -->
+        <a href="#" class="join-link">회원가입</a>
+    </main>
+
+    <!-- 3. 최하단에 copyright 부분은 footer로 구성한다. -->
+    <footer>
+        <!-- &아이콘명; => 아이콘을 사용 가능 -->
+        &copy; Coupang Corp. All rights reserved.
+    </footer>
+
+
+    <script src="script/script.js"></script>
+    
+</body>
+</html>
+
+<!-- 화면을 구성 시,
+위아래로 구성할 수 있는 큼지막한 행 단위로 나누는 것이 좋다.
+쿠팡 로그인 화면에서는, 
+1. coupang logo
+2. 아이디 + 비밀번호 + 자동로그인 체크박스
+3. 로그인버튼
+4. 회원가입 버튼
+5. footer(all rights reserved)
+-->

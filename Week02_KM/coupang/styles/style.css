@@ -1,0 +1,290 @@
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section {
+	display: block;
+}
+body {
+	line-height: 1;
+}
+ol, ul {
+	list-style: none;
+}
+blockquote, q {
+	quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+	content: '';
+	content: none;
+}
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+
+/* html 태그의 구성을 보면서, 모든 선택자를 하나씩 추가해나가기. 안에 무엇을 채울 생각은 하지 말고 먼저 선택자만 써놓기 */
+
+/* 쿠팡 파란색 : #0074e9 */
+/* 쿠팡 빨간색 : #e7223d */
+
+h1 {
+    /* 텍스트를 가운데 정렬(워드 마냥). 사실 텍스트가 아닌 다른 요소(이미지)더라도 이미지의 배열이 조절된다...! */
+    text-align: center;
+    /* margin을 이용하여, 위와 아래의 간격을 띄운다. 3개의 수치가 들어가면 순서대로 상단, 좌우단, 하단의 간격이 변경된다. */
+    margin: 50px auto 10px;
+}
+h1 a {}
+h1 a img {
+    /* 이미지의 크기를 조정한다. */
+    width: 200px;
+}
+main {
+    /* 태그의 크기를 확인하기 위하여 임시방편으로 border 속성을 적용한다. 구현이 완료되면 지운다. */
+    border: 0.5px solid black;
+    width: 500px;
+    /* 현재 태그 '자체'를 부모 요소의 가운데 정렬(좌우로) 하고 싶을 때, margin을 0 auto로 설정한다. 여기서 main 태그를 부모태그(body)에서 가운데정렬(좌우로)하고 싶은 것이므로 앞에 써놓은 대로 설정한다. */
+    margin: 0 auto;
+    /* ***text-align과 margin의 차이점***
+    text-align : 현재 태그 '내부'의 글자들을 좌우로 어떻게 정렬할 것인지 결정한다.
+    margin : 현재 태그 '자체'를 다른 요소와 마진을 어떻게 줄지를 결정 */
+}
+main #login-form {}
+main #login-form fieldset {}
+
+main #login-form fieldset ul {}
+main #login-form fieldset ul li {
+    border: 1px solid #ccc;
+    background: #FFF;
+    display: flex;
+    /* flex-flow : flex-direction과 flex-wrap 속성을 함께 설정하는 단축 속성입니다. 이 속성은 flexbox 레이아웃에서 flex 컨테이너의 주축(main axis)을 기준으로 flex 아이템들을 배치하고, flex 아이템들이 컨테이너의 크기를 넘칠 때 어떻게 처리할지를 설정. flex-direction과 flex-wrap 순서대로 작성한다. 
+    flex-direction: flex 아이템들이 배치되는 방향을 설정합니다. row는 수평 방향으로, column은 수직 방향으로 배치합니다. row-reverse는 row와 같이 수평 방향으로 배치하지만, 오른쪽에서 왼쪽 순서로 배치합니다. column-reverse는 column과 같이 수직 방향으로 배치하지만, 아래에서 위쪽 순서로 배치합니다.
+    flex-wrap: flex 아이템들이 여러 줄에 걸쳐 배치될 수 있는지를 설정합니다. nowrap은 아이템들을 한 줄에 배치합니다. wrap은 아이템들을 여러 줄에 걸쳐 배치합니다. wrap-reverse는 아이템들을 여러 줄에 걸쳐 배치하지만, 줄의 순서를 반대로 배치합니다.*/
+    flex-flow: row nowrap;
+    margin-bottom: 10px;
+}
+
+/* 주의 : li의 클래스 명이 error인 것이므로, 태그명.클래스명으로 써야함. 띄워서 쓰지 않도록 한다. 혹은 그냥 클래스명만 명시해도 된다. */
+main #login-form fieldset ul .error {
+    color: #e7223d;
+    padding: 18px;
+    display: none;
+}
+main #login-form fieldset ul .id-error {
+
+    
+}
+main #login-form fieldset ul li.pw-error {
+
+}
+main #login-form fieldset ul li span {
+
+}
+main #login-form fieldset ul li .id-bg {
+    border-right: 1px solid #ccc;
+    padding: 20px;
+    width: 20px;
+    background-color: #eee;
+    position: relative;
+}
+
+main #login-form fieldset ul li .id-bg::after {
+    background-image: url(../images/icon.svg);
+    background-position: 0 0;
+    width: 21px;
+    height: 21px;
+    position: absolute;
+    left: 14px;
+    top: 11px;
+}
+
+main #login-form fieldset ul li .pw-bg {
+    border-right: 1px solid #ccc;
+    padding: 20px;
+    width: 20px;
+    background-color: #eee;
+    position: relative;
+}
+
+main #login-form fieldset ul li .pw-bg::after {
+    background-image: url(../images/icon.svg);
+    background-position: -21px ;
+    width: 21px;
+    height: 21px;
+    position: absolute;
+    left: 14px;
+    top: 11px;
+}
+
+/* input 태그 모두에 대해 적용 */
+main #login-form fieldset ul li span input {
+    width: 400px;
+    height: 40px;
+    /* border를 0으로 주면, 경계선이 사라진다. */
+    border: 0;
+    padding-left: 5px;
+    background: transparent;
+}
+
+/* input의 placeholder만 조절하고 싶다면? */
+main #login-form fieldset ul li span input::placeholder {
+    font-size: 0.95rem;
+    color: #aaa;
+}
+
+/* input의 경우, 특정 요소에 대해 적용할것이면 [type=폼형식] 이런 식으로 명시해주는 것이 필요하다. */
+main #login-form fieldset ul li span input[type=text] {
+
+}
+
+main #login-form fieldset ul li span input[type=password] {
+
+}
+
+/* show-hide 버튼 */
+main #login-form fieldset ul li span .pw-show-hide {
+
+}
+
+/* 자동로그인 + 아이디/비밀번호 찾기 */
+main #login-form fieldset .btm {
+    display: flex;
+    /* 수평으로 나열(row)되면서, 줄바꿈이 되지 않도록 나열하기 위함.(nowrap) */
+    flex-direction: row nowrap;
+    padding: 15px 0;
+    /* justify-content 속성값들 - display가 flex로 설정되어있어야 의미있음.
+    1. space-between : 요소 사이에 공간을 마련하고 각 요소들은 양 끝으로 보내버림.
+    2. flex-start : 기본값. 왼쪽에서부터 시작
+    3. center : flex에서의 가운데 정렬.
+    4. space-around : 요소들 사이에 동일한 공간을 줌. */
+    justify-content: space-between;
+}
+
+
+main #login-form fieldset .btm p {
+
+}
+
+
+main #login-form fieldset .btm p label {
+
+}
+
+/* input을 type으로 명시해도 되지만, 특정한 이름을 명시해도 된다. */
+/* 자동로그인 체크박스 */
+/* 쿠팡에서는 html에서 기본적으로 제공하는 체크박스를 그대로 사용하지 않고 있음. 그것은 input(checkbox)를 직접 디자인하는 것이 아니라, 배경 이미지를 삽입하여 설정하는 것임. */
+main #login-form fieldset .btm p label input[name=login-y] {
+    /* 이것을 안보이게 해야함. 이것 대신 다른 박스를 사용할 것이기 때문. */
+    appearance: none;
+}
+
+/* 위의 코드와 같이 appearance를 none으로 설정하면, 해당 체크박스가 체크되었는지 안되었는지 확인할 방법이 없음. 따라서, 위의 선택자를 그대로 가져와서 그 뒤에 :checked를 명시하면, 만약 input이 선택되었을 때의 동작을 정의한다. +는 형제 요소를 의미한다. 여기서 최종적으로 선택된 것은 input체크박스로, 형제인 span까지 같이 선택하고 싶다면 +를 사용하면 된다. */
+
+/* 이것은 check박스가 선택되지 않은 상태일 때의 선택자임. +를 통해 span을 checkbox의 레이블로 이용한다. 캡션을 클릭했을 때 체크박스를 누르는 것 과 같이 반영이 되도록 함.*/
+/* 또한, 레이블 앞에 체크박스 모양을 만들어야 하므로 ::before라는 가상 선택자를 추가적으로 이용한다.*/
+main #login-form fieldset .btm p label input[name=login-y] + span::before {
+    /* 이것을 안보이게 해야함. 이것 대신 다른 박스를 사용할 것이기 때문. */
+    appearance: none;
+    background: #fff;
+    border: 1px solid #ccc;
+    /* before/after 가상선택자의 경우, display와 content 속성을 설정하지 않으면 대상이 보이지 않음을 유의한다. */
+    display: inline-block;
+    content: '';
+    width: 17px;
+    height: 17px;
+    background-image: url(../images/icon.svg);
+    background-position: -65px -22px;
+    margin-right: 5px;
+}
+
+/* 선택되었을 때 */
+main #login-form fieldset .btm p label input[name=login-y]:checked + span::before {
+    /* 이것을 안보이게 해야함. 이것 대신 다른 박스를 사용할 것이기 때문. */
+    background-position: -84px -21px;
+}
+
+
+
+
+main #login-form fieldset .btm p label span {
+
+}
+
+main #login-form fieldset .btm .idpw-search {
+    color: #0074e9;
+    text-decoration: none;
+}
+
+/* ::after라는 가상선택자를 활용하여, 텍스트 다음에 오른쪽 화살표가 오도록 한다. ::after는 선택한 대상의 뒤쪽에 삽입하기 위한 가상 자식 요소를 나타냄. */
+main #login-form fieldset .btm .idpw-search::after {
+    /* content : 보여줄 대상을 설정. 글자가 들어갈 수도 있고, svg, img url 등이 올 수 있음 */
+    content: "";
+    /* 크기를 설정하기 위하여 inline-block으로 */
+    display: inline-block;
+    background-image: url(../images/icon.svg);
+    /* 아이콘의 크기를 설정 */
+    width: 15px;
+    height: 15px;
+    /* 해당 svg 파일의 경우, 한 파일에 여러 이미지들이 모여있는 형태로 되어있다. 따라서, 15px x 15px 크기의 사각형이 오른쪽 방향 화살표를 보여주도록 사각형의 위치를 결정해야 한다. 이 때 사용하는 것이 background-position 속성이다.
+    좌우 위치, 상하위치 순서대로 기입, 마이너스는 오른쪽 그리고 아래를 의미한다.
+    개발자 도구에서 이 속성은 드래그하여 변경할 수 있음.이미지의 위치를 확인하는 데 사용할 수 있다. */
+    background-position: -250px -22px;
+    margin-left: 5px;
+}
+
+main #login-form fieldset #login-btn {
+    background-color: #0074e9;
+    width: 100%;
+    color: white;
+    /* padding :
+    현재 콘텐츠 크기에서 밖으로 더 뻗어나가는 크기를 결정한다. 참고로 내부에 있는 요소들의 크기는 그대로 유지됨. 2개 쓰면, 상하단, 좌우단 순서*/
+    padding: 20px 0;
+    /* 그림자 설정. x축, y축, 얼마나 떨어뜨릴 것인지, 색깔 순서 */
+    box-shadow: 0 2px 0 #005ebc;
+}
+
+main .join-link {
+    /* 주의!!! 버튼과는 달리 a태그는 크기 조절이 width와 padding 속성 설정만으로는 되지 않는다. 따라서 display 속성을 block 혹은 inline-block으로 설정하는 것이 필요하다. */
+    display: block;
+    width: 100%;
+    border: 0.5px solid gray;
+    color: #0074e9;
+    padding: 20px 0;
+    text-align: center;
+    /* 밑줄 없애기 */
+    text-decoration: none;
+    box-shadow: 0 2px 0 #6f6f6f;
+}
+
+footer {
+    color: #333;
+    text-align: center;
+    /* 루트 요소 font-size의 0.85배 */
+    font-size: 0.85rem; 
+    margin-top: 20px;
+
+    /* font-size의 단위
+    px : 고정너비 - 반응형 웹에서 권장되지 않음.
+    % : 사용자가 보는 화면에서 차지하는 비중
+    em : '부모'요소, 즉 상위 요소의 글꼴 크기를 기준으로 상대적인 배수 ex) 1.5em
+    rem : '루트'요소의 글꼴 크기를 기준으로 상대적인 배수를 설정. */
+}
