@@ -60,7 +60,6 @@ h1 a img {
 }
 main {
     /* 태그의 크기를 확인하기 위하여 임시방편으로 border 속성을 적용한다. 구현이 완료되면 지운다. */
-    border: 0.5px solid black;
     width: 500px;
     /* 현재 태그 '자체'를 부모 요소의 가운데 정렬(좌우로) 하고 싶을 때, margin을 0 auto로 설정한다. 여기서 main 태그를 부모태그(body)에서 가운데정렬(좌우로)하고 싶은 것이므로 앞에 써놓은 대로 설정한다. */
     margin: 0 auto;
@@ -73,6 +72,8 @@ main #login-form fieldset {}
 
 main #login-form fieldset ul {}
 main #login-form fieldset ul li {
+    /* 자식요소(비밀번호 보이기 버튼)가 position absolute를 설정하여 위치 이동을 할 수 있도록 position을 relative로 설정 */
+    position: relative;
     border: 1px solid #ccc;
     background: #FFF;
     display: flex;
@@ -88,30 +89,36 @@ main #login-form fieldset ul .error {
     color: #e7223d;
     padding: 18px;
     display: none;
+    border: 0;
 }
 main #login-form fieldset ul .id-error {
-
-    
 }
 main #login-form fieldset ul li.pw-error {
-
 }
 main #login-form fieldset ul li span {
 
 }
+
+/* https://nscworld.net/2020/12/27/position%EC%9D%98-relatve%EC%99%80-absolute-%EC%9D%B4%EA%B2%83%EB%A7%8C-%EC%95%8C%EB%A9%B4-%EC%9D%B4%ED%95%B4%EB%90%A8/
+*** absolute는 relative가 있어야만 의미를 찾을 수 있는 속성이다......
+relative 속성은 내가 '부모'라고 선언해주는 기능이 거의 전부이다. absolute는 자식으로서, 항상 부모를 찾는다. 그리고 부모가 있으면 그 부모안에서만 움직이며 자신의 모든 이동의 기준은 부모가 있는 위치이다. */
 main #login-form fieldset ul li .id-bg {
     border-right: 1px solid #ccc;
     padding: 20px;
     width: 20px;
     background-color: #eee;
+    /* 부모 요소가 relative이고, */
     position: relative;
 }
 
 main #login-form fieldset ul li .id-bg::after {
+    display: block;
+    content: '';
     background-image: url(../images/icon.svg);
     background-position: 0 0;
     width: 21px;
     height: 21px;
+    /* 자식 요소가 absolute라면 부모 요소(relative인 경우)가 자식요소의 기준점이 되낟. 따라서 left, top 등을 이용하여, 부모 기준으로 위치를 결정할 수 있게 된다.  */
     position: absolute;
     left: 14px;
     top: 11px;
@@ -126,10 +133,13 @@ main #login-form fieldset ul li .pw-bg {
 }
 
 main #login-form fieldset ul li .pw-bg::after {
+    display: block;
+    content: '';
     background-image: url(../images/icon.svg);
-    background-position: -21px ;
+    background-position: 21px 0;
     width: 21px;
     height: 21px;
+    /* 자식 요소가 absolute라면 부모 요소(relative인 경우)가 자식요소의 기준점이 되낟. 따라서 left, top 등을 이용하여, 부모 기준으로 위치를 결정할 수 있게 된다.  */
     position: absolute;
     left: 14px;
     top: 11px;
@@ -142,7 +152,7 @@ main #login-form fieldset ul li span input {
     /* border를 0으로 주면, 경계선이 사라진다. */
     border: 0;
     padding-left: 5px;
-    background: transparent;
+    background: none;
 }
 
 /* input의 placeholder만 조절하고 싶다면? */
@@ -161,8 +171,14 @@ main #login-form fieldset ul li span input[type=password] {
 }
 
 /* show-hide 버튼 */
-main #login-form fieldset ul li span .pw-show-hide {
-
+main #login-form fieldset ul li .pw-show-hide {
+    width: 21px;
+    height: 21px;
+    background-image: url(../images/icon.svg);
+    background-position: -105px 0;
+    position: absolute;
+    right: 10px;
+    top: 10px;
 }
 
 /* 자동로그인 + 아이디/비밀번호 찾기 */
