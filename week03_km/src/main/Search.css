@@ -1,0 +1,32 @@
+.search {
+    margin-top: 50px;
+    margin-bottom: 20px;
+    height: 172px;
+    text-align: center;
+    align-items: center;
+}
+
+.search-layout {
+    margin-top: 20px;
+    display: flex;
+    justify-content: center;
+    height: 80%;
+    align-items: center;
+    flex-direction: column;
+}
+
+.search-title {
+    font-size: 24px;
+    font-weight: 500;
+
+}
+
+.search-course {
+    width: 50%;
+    height: 53px;
+    margin: 10px;
+    border-radius: 30px;
+    border: 0.5px solid rgb(0, 150, 32);
+    background-color: rgba(29,192,120,.12);
+    padding: 5px 20px;
+}

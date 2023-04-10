@@ -1,0 +1,69 @@
+.container {
+    display: block;
+    height: 380px;
+    border-bottom: 0.5px solid gray;
+    overflow: hidden;
+}
+
+.banner-container {
+    width: 100%;
+    height: 85%;
+    
+}
+
+.banner {
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+}
+
+.banner > img {
+    width: 100%;
+    height: 100%;
+}
+
+
+.banner-controller {
+    height: 15%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+
+.index-controller {
+    width: 135px;
+    height: 36px;
+    border-radius: 20px;
+    background-color: rgb(131, 131, 131);
+    margin-left: 100px;
+    color: white;
+    text-align: center;
+    align-items: center;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    font-size: 14px;
+}
+
+.index-controller > span {
+    margin-top: 2px;
+    margin-left: 10px;
+}
+
+#separator {
+    width: 0.5px;
+    height: 36px;
+    background-color: gray;
+    margin: 2px 15px;
+}
+
+.chip-item {
+    display: inline-block;
+    border-radius: 20px;
+    border: 0.5px solid rgb(174, 174, 174);
+    padding: 10px 15px;
+    font-size: 14px;
+    font-weight: 800;
+    margin-right: 10px;
+}

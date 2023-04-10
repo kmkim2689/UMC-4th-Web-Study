@@ -1,0 +1,14 @@
+.nav-items {
+    display: flex;
+    flex-direction: row;
+    /* flex 안의 태그들의 간격을 동일하게 하는 속성값 : space-around */
+    justify-content: space-around;
+    align-items: center;
+}
+
+.nav-item {
+    display: inline-block;
+    padding: 10px 20px;
+    font-size: 14px;
+    color: black;
+}
