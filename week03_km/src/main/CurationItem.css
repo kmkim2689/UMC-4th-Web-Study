@@ -1,0 +1,28 @@
+.curation-item {
+    height: 100px;
+    width: 120px;
+    overflow: hidden;
+    z-index: 50;
+}
+
+.curation-img {
+    height: 60%;
+    width: 50px;
+    text-align: center;
+    overflow: hidden;
+    margin: 0 auto;
+    z-index: 50;
+}
+
+.curation-img > img {
+    height: 100%;
+    width: 100%; 
+}
+
+.curation-title {
+    margin-top: 20px;
+    font-size: 14px;
+    font-weight: 600;
+    height: 25%;
+    text-align: center;
+}
