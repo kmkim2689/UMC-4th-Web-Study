@@ -6,6 +6,8 @@ import Curation from './Curation.js';
 import CategoryCourses from './CategoryCourses.js';
 import Articles from './Articles.js';
 import Swipe from './Swipe.js'
+import Service from './Service.js';
+import Footer from './Footer.js';
 import './Main.css';
 
 function Main() {
@@ -165,8 +167,28 @@ function Main() {
             {
                 background: "https://cdn.inflearn.com/public/main_sliders/39bcb91f-64a4-4a16-8878-e8dc7cd342e8/bottom-1920-205-%28221%29.jpg",
                 title: "당신은 더 좋은 곳에 갈 수 있어요.\n지금 열려있는 채용공고를 확인해보세요.",
-                button: "비즈니스 알아보기"
+                button: "공고 확인하기"
             }
+        ]
+    };
+
+    const service = {
+        list: [
+            {
+                serviceTitle: "지식공유자 되기",
+                serviceDesc: "9개월간 온라인 기술 강의로만 1억원! 나의 지식을 나눠 사람들에게 배움의 기회를 주고, 의미있는 대가를 가져가세요.",
+                button: "지식공유자 참여하기"
+            },
+            {
+                serviceTitle: "인프런 비즈니스 신청",
+                serviceDesc: "모든 팀원의 인프런의 강의들을 자유롭게 학습하는 환경을 제공해주세요. 업무 스킬에 집중된 콘텐츠를 통해 최신 트렌드의 업무역량을 습득할 수 있습니다.",
+                button: "비즈니스 신청하기"
+            },
+            {
+                serviceTitle: "인프런 제휴",
+                serviceDesc: "다양한 대학 및 기업과 연계된 인프런만의 혜택을 만나보세요. 여러분의 성장에 밑거름이 되어드릴 수 있는 여러 기회를 누릴 수 있습니다.",
+                button: "제휴 둘러보기"
+            } 
         ]
     };
 
@@ -182,7 +204,8 @@ function Main() {
             <CategoryCourses title="내가 학습한 Spring 분야 인기 강의" courses={springCourses}/>
             <Articles articles={articles} />
             <Swipe swiper={swiper}/>
-
+            <Service title="다양한 서비스를 신청하세요." desc="인프런의 지식공유자 '비즈니스' 대학생 신청방법에 대해 알아보세요." service={service}/>
+            <Footer />
         </div>
     )
 }

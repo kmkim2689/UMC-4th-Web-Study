@@ -1,0 +1,17 @@
+.footer-item {
+    width: 20%;
+    margin: 40px 100px;
+}
+
+.footer-title {
+    color: white;
+    font-size: 14px;
+    font-weight: 700;
+    margin-bottom: 20px;
+}
+
+.footer-list {
+    color: white;
+    font-size: 14px;
+    line-height: 20px;
+}
