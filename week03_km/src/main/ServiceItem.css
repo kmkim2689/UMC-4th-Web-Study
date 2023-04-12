@@ -1,0 +1,32 @@
+.service-item {
+    width: 33%;
+    height: 252px;
+    border: 0.5px solid green;
+    padding: 50px 36px;
+    margin: 10px;
+}
+
+.service-title {
+    font-size: 20px;
+    font-weight: 700;
+}
+
+.service-desc {
+    margin-top: 10px;
+    font-size: 16px;
+    color: gray;
+    line-height: 20px;
+    height: 50px;
+}
+
+.service-button {
+    margin-top: 100px;
+    background-color: rgb(69, 154, 69);
+    border: transparent;
+    width: auto;
+    padding: 10px 20px;
+    font-size: 16px;
+    color: white;
+    font-weight: bold;
+    border-radius: 20px;
+}

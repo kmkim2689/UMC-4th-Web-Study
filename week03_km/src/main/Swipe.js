@@ -15,13 +15,13 @@ function Swipe({swiper}) {
     };
 
     return (
-        <div className="swipe-container">
-            <Slider {...settings}>
+        <Slider {...settings}>
+
                 {swiper.list.map((item, index) => (
                     <SwipeItem key={index} background={item.background} title={item.title} button={item.button}/>
                 ))}
-            </Slider>
-        </div>
+
+        </Slider>
     );
 };
 
