@@ -1,0 +1,496 @@
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section {
+	display: block;
+}
+body {
+	line-height: 1;
+}
+ol, ul {
+	list-style: none;
+}
+blockquote, q {
+	quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+	content: '';
+	content: none;
+}
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+
+/* 여기서부터 시작 */
+
+#top_board_container {
+    height: 40px;
+	border-bottom: 0.5px solid gray;
+	/* 아래 모든 속성들은 display가 flex 혹은 flex-inline임이 전제되어야 적용됨. */
+	display: flex;
+	/* justify-content : 플렉스 요소의 가로 방향 정렬 방식을 설정함. 자식요소들의 너비 합이 부모요소의 너비보다 작을 때 유효할 것이다. 여기서는 자식 요소 너비가 부모 너비의 95%이므로 적용될 것. 여기서는 center로 설정되었으므로, 자식요소(들)는 가운데에서부터 양쪽으로 채워가는 형식이 될 것이다. 참고로 start라면, 자식 요소가 부모 요소보다 너비가 작은 경우 왼쪽에 딱 붙어서 시작하게 될 것이다. */
+	justify-content: center;
+	/* align-items : 플렉스 요소의 세로 방향 정렬 방식을 설정함. 부모요소보다 자식 요소의 높이가 작을 때, 수직으로 어떻게 정렬할지를 결정한다. center 값이 주어지면, 자식 요소는 부모 요소의 정중앙 높이에 위치하게 될 것이다. */
+	align-items: center;
+}
+
+#top_board_contents {
+	/* 부모 요소 너비의 95%만큼만 가져간다. */
+	width: 95%;
+	display: flex;
+	flex-direction: row;
+	align-items: center;
+	justify-content: center;
+	/* 부모 요소 높이의 80%만큼만 가져간다. */
+	height: 80%;
+}
+
+.top_board_select {
+	overflow: hidden;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	height: 100%;
+	width: 85px;
+}
+
+/* 이미지를 그대로 넣으면 잘려버리는 현상이 일어나기 때문에, container를 두고 그 안에 이미지를 넣는다. */
+.top_banner_image_container {
+	width: 30px;
+	height: 100%;
+	/* 이미지가 영역을 벗어나는 경우, 어떻게 보여줄지에 대해 결정하는 속성이다. 벗어나는 영역은 보여주고 싶지 않으면 hidden으로 설정한다. */
+	overflow: hidden;
+	overflow-y: hidden;
+}
+
+
+.top_banner_image_container > img {
+
+	display: block;
+	/* 이미지의 높이와 너비는 부모와 똑같이. */
+	width: 100%;
+	height: 100%;
+	/* margin을 0 auto로 설정하면, 부모 내부에서 정 가운데로 정렬된다. 여기서 0값은, 상하좌우에 대하여 여백을 주지 않겠다는 의미이고, auto는 부모 내부에서 좌우 중앙으로 정렬하겠다는 의미 */
+	margin: 0 auto;
+	
+}
+
+#top_board_space {
+	width: 1200px;
+}
+
+#top_board_participate {
+	width: 200px;
+	height: 100%;
+	margin: 0 auto;
+	text-align: center;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+header {
+	/* position 속성을 sticky로 지정하면, 스크롤을 해도 화면 상에서 절대적인 위치에서 벗어나지 않게 된다. 안드로이드로 치면 app bar를 만드는 방법이라고 보면 될듯 */
+    position: sticky;
+    height: 64px;
+	/* 스크롤 한 경우, 최상단에서 몇 픽셀 떨어뜨릴 것인지 */
+    top: 0;
+	display: flex;
+	flex-direction: row;
+	/* 배경 설정을 하지 않으면, 투명한 배경이므로 스크롤 시 글자가 겹쳐보이게 된다. 따라서 배경설정을 어떤 색이든 해줘야 한다는 것이 포인트 */
+	background-color: white;
+	align-items: center;
+	justify-content: center;
+}
+
+/* 주의!!! flex 블록의 경우, 자식 요소들의 태그가 div인 것들에 대해서만 적용된다. 즉 자식 태그가 div가 아닌 form, nav 등 다른 태그가 온다면, 부모 요소에서 display를 flex로 정의하고 그에 따라 align-items 그리고 justify-content 속성을 정의한다고 하더라도 div가 아닌 태그들에 대해서는 적용이 되지 않는다..... */
+#header_contents {
+	width: 95%;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	height: 80%;
+	background-color: white;
+}
+
+#inflearn_logo_container {
+	width: 100px;
+	height: 40%;
+	align-items: center;
+	justify-content: center;
+	overflow: hidden;
+}
+
+#inflearn_logo_container > img {
+	width: 100%;
+	height: 100%;
+	align-items: center;
+	justify-content: center;
+	margin: 0 auto;
+}
+
+#nav_bar_left {
+	/* 바로 인접해있는 형제 요소와의 외부 공간을 설정. margin-left 혹은 margin-right로 */
+	margin-left: 30px;
+	width: 400px;
+	height: 50%;
+	align-items: center;
+	justify-content: center;
+	display: flex;
+	flex-direction: row;
+}
+
+.nav_bar_left_item {
+	/* 아이템이 기본값을 넘어 넓어질 수 있는 지를 설정함. 1만 줘도 화면 끝까지 꽉 채운다. 아이템을 화면에 꽉 채우는 데 유용하다.  1이면 늘어나고 0이면 안 늘어난다. */
+	flex-grow: 1;
+	align-items: center;
+	justify-content: center;
+	font-size: 15px;
+	font-weight: bold;
+}
+
+#nav_bar_space {
+	width: 520px;
+	height: 100%;
+}
+
+#search {
+	background-color: rgb(235, 235, 235);
+	border-radius: 10px;
+	width: 200px;
+	height: 40px;
+	display: flex;
+	flex-direction: row;
+	align-items: center;
+	justify-content: center;
+}
+
+#search > input {
+	background-color: transparent;
+	width: 70%;
+	height: 80%;
+	/* input의 경계선과 배경을 투명하게 하기 위하여, border 속성과 background 속성을 다음과 같이 설정한다. */
+	background: transparent;
+	border: none;
+	align-items: center;
+	justify-content: center;
+}
+
+#search > img {
+	margin-left: 10px;
+}
+
+.login_sign_up {
+	width: 60px;
+	height: 40%;
+	border: 0.5px solid gray;
+	border-radius: 5px;
+	padding: 10px;
+	text-align: center;
+	font-size: 10px;
+}
+
+#boot-camp-banner {
+	display: block;
+	height: 360px;
+	background: linear-gradient(99deg, #31b69e 17%, #3ec674 83%);
+    background-image: linear-gradient(99deg, rgb(49, 182, 158) 17%, rgb(62, 198, 116) 83%);
+    background-position-x: initial;
+    background-position-y: initial;
+    background-size: initial;
+    background-attachment: initial;
+    background-origin: initial;
+    background-clip: initial;
+    background-color: initial;
+}
+
+#banner-content-container {
+	width: 80%;
+	height: 80%;
+	margin: 0 auto;
+	top: 30px;
+	display: block;
+}
+
+#banner_title {
+	color: white;
+	font-weight: bold;
+	font-size: 32px;
+
+}
+
+#banner_desc {
+	color: white;
+	font-size: 18px;
+	margin-top: 20px;
+
+}
+
+#course_container {
+	width: 100%;
+	height: 190px;
+	border-radius: 12px;
+	margin-top: 20px;
+	display: flex;
+	flex-direction: row;
+	flex-direction: row;
+	background-color: hsla(0,0%,100%,.64);
+}
+
+#course_img_container {
+	width: 25%;
+	height: 100%;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	overflow: hidden;
+	
+}
+
+#course_img_container > img {
+	width: 100%;
+	height: 100%;
+	/* border-radius : left-top부터 시계방향으로. */
+	border-radius: 12px 0px 0px 12px;
+
+}
+
+#banner_desc_container {
+	width: 75%;
+	height: 100%;
+	display: block;
+	align-items: center;
+}
+
+#banner_desc_title {
+	font-size: 18px;
+	font-weight: bold;
+}
+
+#banner_desc_content {
+	font-size: 16px;
+	margin-top: 20px;
+	height: 40px;
+	line-height: 20px;
+	overflow: hidden;
+	text-overflow: ellipsis;
+}
+
+#banner_desc_container > div {
+	height: 70%;
+	width: 90%;
+	margin: 0 auto;
+	margin-top: 30px;
+}
+
+#chip_review {
+	width: 176px;
+	height: 34px;
+	border-radius: 20px;
+	margin-top: 20px;
+	background-color: white;
+}
+
+#intro {
+	height: 105px;
+	background-color: #343a40;
+	text-align: center;
+	line-height: 105px;
+	font-size: 22px;
+	font-weight: bold;
+	color: white;
+}
+
+#intro2 {
+	height: 358px;
+	display: block;
+	align-items: center;
+}
+
+#question {
+	width: 360px;
+	background: #343a40;
+	border-radius: 8px;
+	padding: 12px;
+	text-align: center;
+	height: 20px;
+	line-height: 20px;
+	font-size: 18px;
+	color: white;
+	margin: 0 auto;
+	margin-top: 40px;
+	font-weight: bold;
+}
+
+#intro2 > h3 {
+	font-size: 27px;
+	font-weight: bold;
+	width: 480px;
+	text-align: center;
+	margin: 0 auto;
+	margin-top: 10px;
+	margin-bottom: 10px;
+	line-height: 35px;
+}
+
+.description1 {
+	font-size: 18px;
+	width: 480px;
+	text-align: center;
+	margin: 0 auto;
+	line-height: 28px;
+}
+
+#description2 {
+	font-size: 14px;
+	width: 480px;
+	text-align: center;
+	margin: 0 auto;
+	margin-top: 20px;
+}
+
+#description3 {
+	font-size: 14px;
+	width: 480px;
+	text-align: center;
+	margin: 0 auto;
+	margin-top: 10px;
+}
+
+#image_description {
+	height: 430px;
+	display: flex;
+	flex-direction: row;
+	align-items: center;
+	justify-content: center;
+}
+
+#image_description > div {
+	height: 90%;
+	width: 50%;
+	display: block;
+}
+
+.img_container {
+	width: 70%;
+	height: 80%;
+	margin: 0 auto;
+	overflow: hidden;
+}
+
+.text_container {
+	margin: 0 auto;
+	background-color: black;
+	color: white;
+	font-size: 16px;
+	text-align: center;
+	margin-top: 30px;
+	padding: 10px;
+	border-radius: 10px;
+	width: 200px;
+}
+
+.ratings {
+	margin-top: 30px;
+	display: flex;
+	flex-direction: row;
+	align-items: center;
+	justify-content: center;
+}
+
+.ratings > div {
+	width: 50%;
+	height: 230px;
+}
+
+.rating_item {
+	width: 70%;
+	height: 85%;
+	border: 0.5px solid gray;
+	margin: 0 auto;
+	border-radius: 10px;
+}
+
+#start_paragraph {
+	height: 86px;
+	display: block;
+}
+
+#start {
+	text-align: center;
+	height: 60px;
+	font-size: 16px;
+	line-height: 30px;
+}
+
+#start_desc {
+	text-align: center;
+	height: 30px;
+	font-size: 12px;
+	line-height: 30px;
+	color: gray;
+	margin-top: 5px;
+}
+
+#bottom_banner {
+	width: 85%;
+	height: 80px;
+	background-color: #00c968;
+	margin: 0 auto;
+	margin-top: 80px;
+	border-radius: 5px;
+	text-align: start;
+	line-height: 80px;
+	font-size: 16px;
+	color: white;
+	font-weight: 600;
+	padding-inline-start: 30px;
+}
+
+#courses {
+	margin: 0 auto;
+	height: 484px;
+	width: 87%;
+	margin-top: 50px;
+	margin-bottom: 50px;
+	display: block;
+}
+
+#courses_title {
+	font-size: 24px;
+	font-weight: 700;
+}
+
+#chip {
+	height: 36px;
+	width: 78px;
+	font-size: 15px;
+	border: 0.5px solid #00c968;
+	border-radius: 20px;
+	color: #00c968;
+	line-height: 36px;
+	text-align: center;
+	font-weight: 500;
+	margin-top: 20px;
+}
