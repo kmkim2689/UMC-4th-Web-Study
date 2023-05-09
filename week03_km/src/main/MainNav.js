@@ -2,6 +2,7 @@ import { Link } from 'react-router-dom';
 import './MainNav.css';
 import MainNavMenu from './MainNavMenu.js';
 import { FaSearch, FaPlay, FaShoppingCart, FaUser } from "react-icons/fa";
+import { useRef, useState } from 'react';
 
 /*
 리액트에서 아이콘을 사용하는 방법
@@ -16,6 +17,20 @@ import { 아이콘명1, 아이콘명2 } from "react-icons/아이콘카테고리�
 */
 
 function MainNav() {
+
+    const inputRef = useRef(null);
+
+    const [keyword, setKeyword] = useState("");
+
+    const onClick = () => {
+        if (keyword.length === 0) {
+            inputRef.current.focus()
+        } else {
+            let link = `https://www.inflearn.com/courses?s=${keyword}`
+            window.open(link);
+        }
+        
+    }
     return (
         <nav className="main-nav">
             <div className="main-nav-layout" id="main-nav-left">
@@ -26,10 +41,12 @@ function MainNav() {
 
             <div className="main-nav-layout" id="main-nav-right">
                 <div className='search-top'>
-                    <input type='text'></input>
-                    <span>
+                    <input type='text' ref={inputRef} onChange={(event) => {
+                        setKeyword(event.target.value);
+                    }}></input>
+                    <span className='search-icon' onClick={onClick}>
                         <FaSearch />
-                    </span>
+                    </span> 
                 </div>
                 
                 <button className='dashboard'>대시보드</button>

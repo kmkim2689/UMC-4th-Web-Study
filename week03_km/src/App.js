@@ -11,12 +11,9 @@ function App() {
     <>
       <Top />
       <Routes>
-        <Route path="/">
-          <Route path="" element={<Home />}/>
-          <Route path="course/:id" element={<CourseDetail />}/>
-          <Route path="curation" element={<Bootcamp />}/>
-        </Route>
-        
+          <Route path="/" element={<Home />}/>
+          <Route path="/course/:id" element={<CourseDetail />}/>
+          <Route path="/curation" element={<Bootcamp />}/>
       </Routes>
       {/* <Main></Main> */}
 

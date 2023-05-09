@@ -1,0 +1,168 @@
+#banner-content-container {
+	width: 80%;
+	height: 80%;
+	margin: 0 auto;
+	top: 30px;
+	display: block;
+}
+
+#banner_title {
+	color: white;
+	font-weight: bold;
+	font-size: 32px;
+
+}
+
+#banner_desc {
+	color: white;
+	font-size: 18px;
+	margin-top: 20px;
+
+}
+
+#course_container {
+	width: 100%;
+	height: 190px;
+	border-radius: 12px;
+	margin-top: 20px;
+	display: flex;
+	flex-direction: row;
+	flex-direction: row;
+	background-color: hsla(0,0%,100%,.64);
+}
+
+
+#banner_desc_container {
+	width: 75%;
+	height: 100%;
+	display: block;
+	align-items: center;
+}
+
+#banner_desc_title {
+	font-size: 18px;
+	font-weight: bold;
+}
+
+#banner_desc_content {
+	font-size: 16px;
+	margin-top: 20px;
+	height: 40px;
+	line-height: 20px;
+	overflow: hidden;
+	text-overflow: ellipsis;
+}
+
+#banner_desc_container > div {
+	height: 70%;
+	width: 90%;
+	margin: 0 auto;
+	margin-top: 30px;
+}
+
+#chip_review {
+	width: 176px;
+	height: 34px;
+	border-radius: 20px;
+	margin-top: 20px;
+	background-color: white;
+}
+
+#intro {
+	height: 105px;
+	background-color: #343a40;
+	text-align: center;
+	line-height: 105px;
+	font-size: 22px;
+	font-weight: bold;
+	color: white;
+}
+
+#intro2 {
+	height: 358px;
+	display: block;
+	align-items: center;
+}
+
+#question {
+	width: 360px;
+	background: #343a40;
+	border-radius: 8px;
+	padding: 12px;
+	text-align: center;
+	height: 20px;
+	line-height: 20px;
+	font-size: 18px;
+	color: white;
+	margin: 0 auto;
+	margin-top: 40px;
+	font-weight: bold;
+}
+
+#intro2 > h3 {
+	font-size: 27px;
+	font-weight: bold;
+	width: 480px;
+	text-align: center;
+	margin: 0 auto;
+	margin-top: 10px;
+	margin-bottom: 10px;
+	line-height: 35px;
+}
+
+.description1 {
+	font-size: 18px;
+	width: 480px;
+	text-align: center;
+	margin: 0 auto;
+	line-height: 28px;
+}
+
+#description2 {
+	font-size: 14px;
+	width: 480px;
+	text-align: center;
+	margin: 0 auto;
+	margin-top: 20px;
+}
+
+#description3 {
+	font-size: 14px;
+	width: 480px;
+	text-align: center;
+	margin: 0 auto;
+	margin-top: 10px;
+}
+
+#image_description {
+	height: 430px;
+	display: flex;
+	flex-direction: row;
+	align-items: center;
+	justify-content: center;
+}
+
+#image_description > div {
+	height: 90%;
+	width: 50%;
+	display: block;
+}
+
+.img_container {
+	width: 70%;
+	height: 80%;
+	margin: 0 auto;
+	overflow: hidden;
+}
+
+.text_container {
+	margin: 0 auto;
+	background-color: black;
+	color: white;
+	font-size: 16px;
+	text-align: center;
+	margin-top: 30px;
+	padding: 10px;
+	border-radius: 10px;
+	width: 200px;
+}

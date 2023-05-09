@@ -82,7 +82,7 @@ table {
     width: 150px;
     background: #F6F6F6;
     border-radius: 5px;
-    border: 0px;
+    border: 0.5px solid gray;
     margin-right: 20px;
     display: relative;
     overflow: hidden;
@@ -94,7 +94,7 @@ table {
     height: 100%;
     background: #F6F6F6;
     border: 0px;
-    width: 100%;
+    width: 70%;
     z-index: 100;
 }
 
@@ -123,7 +123,14 @@ table {
     z-index: 100;
 }
 
-.user-icons {
+.search-icon {
+    margin: 10px;
+    height: 70%;
+    z-index: 100;
+}
+
+
+.user-icon {
     margin: 10px;
     height: 70%;
     z-index: 100;
