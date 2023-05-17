@@ -1,16 +1,16 @@
-import React, { useContext } from 'react'
+import React from 'react'
 import './BannerContentContainer.css';
 import { BootcampContext } from '../Bootcamp';
 
 function BannerContentContainer() {
-    const { title, desc } = useContext(BootcampContext);
+    // const { title, desc } = useContext(BootcampContext);
   return (
     <div id='banner-content-container'>
         <div id="banner_title">
-                {title}
+                {/* {title} */}
             </div>
             <div id="banner_desc">
-                {desc}
+                {/* {desc} */}
             </div>
             <div id="course_container">
                 <div id="course_img_container">

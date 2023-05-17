@@ -11,7 +11,7 @@ function Bootcamp() {
     const [desc, setDesc] = useState("첫 시작부터 취업까지! 꼼꼼한 관리로 동기를 불어넣는 부트캠프 🔥");
   return (
     
-    <BootcampContext.Provider value={{ title, desc }}>
+    <>
         <section id="boot-camp-banner">
         <BannerContentContainer />
 
@@ -104,8 +104,8 @@ function Bootcamp() {
         <div id="chip">전체</div>
     </section>
     
-
-    </BootcampContext.Provider>
+    </>
+    
 
   )
 }
