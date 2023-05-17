@@ -1,10 +1,41 @@
+import { useSelector } from 'react-redux';
+import { changeCourse, setCourse, store, CHANGE } from '../store';
 import './Course.css'
 
 function Course({ thumbnail, courseTitle, courseOwner, rating, price }) {
+
+    // 네트워크 통신으로 thumbnail, courseTitle, courseOwner, price를 가져왔다고 가정
+
+
+    const title = document.getElementById("title");
+    const thumb = document.getElementById("thumb");
+    const own = document.getElementById("owner")
+
+    store.dispatch(changeCourse(thumbnail, courseTitle, courseOwner, rating, price));
+
+    console.log(store)
+
+    // react redux에 있는 useSelector
+    // const img = useSelector((state) => {
+    //     return state.thumbnail
+    // });
+    // const title = useSelector(state => state.title);
+    // const owner = useSelector(state => state.owner);
+
+    const img = store.getState()
+    console.log(img)
+
+    store.subscribe(() => {
+        console.log("getstate" + store.getState())
+        title.innerText = store.getState().courseTitle;
+        thumb.src = store.getState().thumbnail;
+        own.innerText = store.getState().courseOwner;
+    })
+
     return (
         <div className="course">
             <div className="course-thumbnail">
-                <img src={thumbnail} alt="thumbnail"/>
+                <img id="thumb" src={thumbnail} alt="thumbnail"/>
             </div>
             <span id='title'>{courseTitle}</span>
             <span id='owner'>{courseOwner}</span>

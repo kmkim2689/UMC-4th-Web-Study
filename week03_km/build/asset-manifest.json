@@ -1,0 +1,20 @@
+{
+  "files": {
+    "main.css": "/UMC-4th-Web-Study/static/css/main.cb080545.css",
+    "main.js": "/UMC-4th-Web-Study/static/js/main.b3bb5605.js",
+    "static/media/banner2.gif": "/UMC-4th-Web-Study/static/media/banner2.c8c97c34e5cadf012b54.gif",
+    "static/media/banner1.png": "/UMC-4th-Web-Study/static/media/banner1.fc6592e4bed6213d0768.png",
+    "static/media/banner3.png": "/UMC-4th-Web-Study/static/media/banner3.4b70a87713eec0357c93.png",
+    "static/media/slick.svg": "/UMC-4th-Web-Study/static/media/slick.2630a3e3eab21c607e21.svg",
+    "static/media/slick.eot": "/UMC-4th-Web-Study/static/media/slick.a4e97f5a2a64f0ab1323.eot",
+    "static/media/slick.ttf": "/UMC-4th-Web-Study/static/media/slick.c94f7671dcc99dce43e2.ttf",
+    "static/media/slick.woff": "/UMC-4th-Web-Study/static/media/slick.295183786cd8a1389865.woff",
+    "index.html": "/UMC-4th-Web-Study/index.html",
+    "main.cb080545.css.map": "/UMC-4th-Web-Study/static/css/main.cb080545.css.map",
+    "main.b3bb5605.js.map": "/UMC-4th-Web-Study/static/js/main.b3bb5605.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.cb080545.css",
+    "static/js/main.b3bb5605.js"
+  ]
+}

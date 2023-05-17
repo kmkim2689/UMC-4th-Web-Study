@@ -1,5 +1,6 @@
 import './Footer.css';
 import FooterMenu from './FooterMenu.js';
+// reactdevelopertools 설치하기
 
 function Footer() {
 

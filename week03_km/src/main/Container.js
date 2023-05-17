@@ -16,7 +16,7 @@ function Container() {
           setCurrentNum((currentNum + 1) % bannerList.length);
         }, 5000);
         return () => clearInterval(intervalid);
-      }, [currentNum, bannerList.length]);
+      }, [currentNum]);
 
     // event.target과 event.currentTarget의 차이
     /*

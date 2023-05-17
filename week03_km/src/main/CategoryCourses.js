@@ -1,3 +1,4 @@
+import { Link } from 'react-router-dom';
 import './CategoryCourses.css';
 import Course from './Course.js'
 
@@ -9,7 +10,7 @@ function CategoryCourses({title, courses}) {
         <section className='courses-container'>
             <div className='courses-container-title'>{title}</div>
             <div className='courses-container-courses'>
-                {courses.list.map((item) => (<Course thumbnail={item.thumbnail} courseTitle={item.courseTitle} courseOwner={item.courseOwner} rating={item.rating} price={item.price} />)
+                {courses.list.map((item, index) => (<Link to={`/course/${index}`}><Course thumbnail={item.thumbnail} courseTitle={item.courseTitle} courseOwner={item.courseOwner} rating={item.rating} price={item.price} /></Link>)
                 )}
             </div>
             

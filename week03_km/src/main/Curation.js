@@ -3,6 +3,7 @@ import CurationItem from './CurationItem.js';
 import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
+import { Link } from 'react-router-dom';
 // react에서 carousel을 사용하기 위하여, react-slick라이브러리 이용
 /*
 https://sirong.tistory.com/38
@@ -35,7 +36,7 @@ function Curation() {
             <div id='curation-slider'>
                 <Slider {...settings}>
                     <div>
-                        <CurationItem src="https://cdn.inflearn.com/public/curation/byManage.png" title="# 관리형 부트캠프" />
+                        <Link to={`/curation?name=bootcamp`}><CurationItem src="https://cdn.inflearn.com/public/curation/byManage.png" title="# 관리형 부트캠프" /></Link>
                     </div>
                     <div>
                         <CurationItem src="https://cdn.inflearn.com/public/curation/_byMyself.png" title="# 독학형 부트캠프" />

@@ -32,8 +32,7 @@ buttonRight.addEventListener('click', () => {
 
 function getResult() {
   let input = document.getElementById("search_content").value;
-  window.location.href = "https://www.inflearn.com/courses?s="+input
-
+  location.href = "https://www.inflearn.com/courses?s="+input
 }
 
 function changeImage() {
